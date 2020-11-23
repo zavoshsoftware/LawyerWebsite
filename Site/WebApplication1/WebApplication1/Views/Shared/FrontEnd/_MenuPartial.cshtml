@@ -1,0 +1,54 @@
+﻿@model ViewModels._BaseViewModel
+
+				<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a href="/" class="nav-link">
+						خانه
+					</a>
+				</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">
+								خدمات
+								<i class='bx bx-chevron-down'></i>
+							</a>
+							<ul class="dropdown-menu">
+								@foreach (var service in Model.MenuItems)
+								{
+									<li class="nav-item">
+										<a href="/service/@service.UrlParam" class="nav-link">
+											@service.Title
+										</a>
+									</li>
+								}
+							
+						 
+							</ul>
+						</li>
+					<li class="nav-item">
+						<a href="/expert" class="nav-link">
+							متخصصین
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/blog" class="nav-link">
+							وبلاگ
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/#" class="nav-link">
+							درباره ما
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/contact" class="nav-link">
+							تماس با ما
+						</a>
+					</li>
+					<li class="nav-btn">
+						<a href="/appointment" class="default-btn">
+							درخواست وقت مشاوره
+							<span></span>
+						</a>
+					</li>
+					</ul>
+	

@@ -1,0 +1,103 @@
+﻿
+@{
+		Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>@ViewBag.Title | مستانه</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<!-- Boxican Css -->
+	<link rel="stylesheet" href="/assets/css/boxicons.min.css">
+	<!-- Meanmenu CSS -->
+	<link rel="stylesheet" href="/assets/css/meanmenu.min.css">
+	<!-- Nice Select CSS -->
+	<link rel="stylesheet" href="/assets/css/nice-select.css">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="/assets/css/animate.min.css">
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+	<!-- Owl Theme CSS -->
+	<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+	<!-- Magnific CSS -->
+	<link rel="stylesheet" href="/assets/css/magnific-popup.min.css">
+	<!-- Jquery Datetimepicker CSS -->
+	<link rel="stylesheet" href="/assets/css/jquery.datetimepicker.min.css" />
+	<!-- Styleshet CSS -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="/assets/css/responsive.css">
+	<!-- RTL CSS -->
+	<link rel="stylesheet" href="/assets/css/rtl.css">
+	<!-- Favican -->
+	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+	<link href="~/assets/css/style-zavosh.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="navbar-area">
+		<div class="main-responsive-nav">
+			<div class="container">
+				<div class="main-responsive-menu">
+					<div class="logo">
+						<a href="/">
+							<img src="/assets/img/logo.png" alt="کلینیک مستانه">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-navbar pag-nav">
+			<div class="container">
+				<nav class="navbar  navbar-expand-md navbar-two">
+					<a class="navbar-brand" href="/">
+						<img src="/assets/img/logo.png" alt="کلینیک مستانه">
+					</a>
+					<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+						@Html.Partial("FrontEnd/_MenuPartial")
+					</div>
+				</nav> 
+			</div>
+		</div>
+	</div>
+	@RenderBody()
+	@Html.Partial("FrontEnd/_FooterPartial")
+
+	<div class="go-top">
+		<i class='bx bxs-upvote'></i>
+	</div>
+	<!-- End Go Top -->
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<!-- Magnific -->
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- Meanmenu JS -->
+	<script src="/assets/js/meanmenu.min.js"></script>
+	<!-- Nice Select JS -->
+	<script src="/assets/js/jquery.nice-select.min.js"></script>
+	<!-- Owl Carousel JS -->
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<!-- Jquery Mixitup JS -->
+	<script src="/assets/js/jquery.mixitup.min.js"></script>
+	<!-- Jquery Datetimepicker JS -->
+	<script src="/assets/js/jquery.datetimepicker.full.min.js"></script>
+	<!-- Form Validator JS -->
+	<script src="/assets/js/form-validator.min.js"></script>
+	<!-- Contact JS -->
+	<script src="/assets/js/contact-form-script.js"></script>
+	<!-- Ajaxchimp JS -->
+	<script src="/assets/js/jquery.ajaxchimp.min.js"></script>
+	<!-- Custom JS -->
+	<script src="/assets/js/custom.js"></script>
+</body>
+</html>
