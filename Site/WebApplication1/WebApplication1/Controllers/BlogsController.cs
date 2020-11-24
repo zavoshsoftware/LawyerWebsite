@@ -12,51 +12,31 @@ using ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    public class ServicesController : Controller
+    public class BlogsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: Services
+        // GET: Blogs
         public ActionResult Index()
         {
-            var services = db.Services.Include(s => s.Parent).Where(s=> s.IsDeleted==false).OrderByDescending(s=>s.CreationDate);
-            return View(services.ToList());
+            var blogs = db.Blogs.Include(b => b.Service).Where(b=>b.IsDeleted==false).OrderByDescending(b=>b.CreationDate);
+            return View(blogs.ToList());
         }
 
-        [Route("service/{urlParam}")]
-        public ActionResult Details(string urlParam)
-        {
-
-            Service service = db.Services.FirstOrDefault(c => c.UrlParam == urlParam);
-            if (service == null)
-            {
-                return HttpNotFound();
-            }
-
-            ServiceDetailViewModel result= new ServiceDetailViewModel()
-            {
-                Service = service,
-                SidebarServices = db.Services.Where(c=>c.ParentId==service.ParentId&&c.IsDeleted==false&&c.IsActive).ToList(),
-                RelatedBlog = db.Blogs.Where(c=>c.ServiceId==service.Id).ToList()
-            };
-
-      
-            return View(result);
-        }
-
-        // GET: Services/Create
+        
+        // GET: Blogs/Create
         public ActionResult Create()
         {
-            ViewBag.ParentId = new SelectList(db.Services.Where(c=>c.ParentId==null), "Id", "Title");
+            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Title");
             return View();
         }
 
-        // POST: Services/Create
+        // POST: Blogs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Service service, HttpPostedFileBase fileUpload)
+        public ActionResult Create(Blog blog, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
@@ -68,49 +48,51 @@ namespace WebApplication1.Controllers
                     string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
                                          + Path.GetExtension(filename);
 
-                    string newFilenameUrl = "/Uploads/Service/" + newFilename;
+                    string newFilenameUrl = "/Uploads/Blog/" + newFilename;
                     string physicalFilename = Server.MapPath(newFilenameUrl);
 
                     fileUpload.SaveAs(physicalFilename);
 
-                    service.ImageUrl = newFilenameUrl;
+                    blog.ImageUrl = newFilenameUrl;
                 }
-                 
+
                 #endregion
-                service.IsDeleted=false;
-				service.CreationDate= DateTime.Now; 
-                service.Id = Guid.NewGuid();
-                db.Services.Add(service);
+
+                blog.Visit = 0;
+                blog.IsDeleted=false;
+				blog.CreationDate= DateTime.Now; 
+                blog.Id = Guid.NewGuid();
+                db.Blogs.Add(blog);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ParentId = new SelectList(db.Services.Where(c => c.ParentId == null), "Id", "Title", service.ParentId);
-            return View(service);
+            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Title", blog.ServiceId);
+            return View(blog);
         }
 
-        // GET: Services/Edit/5
+        // GET: Blogs/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Service service = db.Services.Find(id);
-            if (service == null)
+            Blog blog = db.Blogs.Find(id);
+            if (blog == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ParentId = new SelectList(db.Services.Where(c => c.ParentId == null), "Id", "Title", service.ParentId);
-            return View(service);
+            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Title", blog.ServiceId);
+            return View(blog);
         }
 
-        // POST: Services/Edit/5
+        // POST: Blogs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Service service, HttpPostedFileBase fileUpload)
+        public ActionResult Edit(Blog blog, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
@@ -122,48 +104,48 @@ namespace WebApplication1.Controllers
                     string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
                                          + Path.GetExtension(filename);
 
-                    string newFilenameUrl = "/Uploads/Service/" + newFilename;
+                    string newFilenameUrl = "/Uploads/Blog/" + newFilename;
                     string physicalFilename = Server.MapPath(newFilenameUrl);
 
                     fileUpload.SaveAs(physicalFilename);
 
-                    service.ImageUrl = newFilenameUrl;
+                    blog.ImageUrl = newFilenameUrl;
                 }
 
                 #endregion
-                service.IsDeleted = false;
-				service.LastModifiedDate = DateTime.Now;
-                db.Entry(service).State = EntityState.Modified;
+                blog.IsDeleted = false;
+				blog.LastModifiedDate = DateTime.Now;
+                db.Entry(blog).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ParentId = new SelectList(db.Services.Where(c => c.ParentId == null), "Id", "Title", service.ParentId);
-            return View(service);
+            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Title", blog.ServiceId);
+            return View(blog);
         }
 
-        // GET: Services/Delete/5
+        // GET: Blogs/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Service service = db.Services.Find(id);
-            if (service == null)
+            Blog blog = db.Blogs.Find(id);
+            if (blog == null)
             {
                 return HttpNotFound();
             }
-            return View(service);
+            return View(blog);
         }
 
-        // POST: Services/Delete/5
+        // POST: Blogs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Service service = db.Services.Find(id);
-			service.IsDeleted=true;
-			service.DeletionDate=DateTime.Now;
+            Blog blog = db.Blogs.Find(id);
+			blog.IsDeleted=true;
+			blog.DeletionDate=DateTime.Now;
  
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -177,6 +159,42 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
+        [AllowAnonymous]
+        [Route("blog")]
+        public ActionResult List()
+        {
+            BlogListViewModel result = new BlogListViewModel()
+            {
+                Blogs = db.Blogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).ToList()
+            };
+            return View(result);
+        }
+
+        [AllowAnonymous]
+        [Route("blog/{urlParam}")]
+        public ActionResult Details(string urlParam)
+        {
+            Blog blog = db.Blogs.FirstOrDefault(c => c.UrlParam == urlParam && c.IsDeleted == false);
+            if (blog == null)
+            {
+                return RedirectToAction("List");
+            }
+
+            BlogDetailViewModel result = new BlogDetailViewModel()
+            {
+                Blog = blog,
+                SidebarServices = db.Services.Where(c => c.IsDeleted == false && c.IsActive).OrderBy(c => c.Order).ToList(),
+                SidebarBlog = db.Blogs.Where(c => c.IsDeleted == false && c.Id != blog.Id && c.IsActive).OrderByDescending(c => c.CreationDate).Take(4).ToList(),
+                BlogComments = db.BlogComments.Where(c=>c.BlogId==blog.Id&&c.IsActive&&c.IsDeleted==false).ToList()
+                
+            };
+
+            return View(result);
+        }
     }
 }
-

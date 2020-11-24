@@ -1,131 +1,122 @@
-﻿@model Models.Service
+﻿@model ViewModels.ServiceDetailViewModel
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+
 }
+ 
 
-<h2>Details</h2>
+<section class="breadcrumb-header" id="page" style="background-image: url(/assets/images/header/06_header.jpg)">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="banner">
+					<h1>@Model.Service.Title</h1>
+					<ul>
+						<li><a href="/">خانه</a></li>
+						<li><i class="fas fa-angle-left"></i></li>
+						<li>@Model.Service.Title</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-<div>
-    <h4>Service</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Parent.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Parent.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UrlParam)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UrlParam)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Summery)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Summery)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Order)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Order)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsInHome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsInHome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreationDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastModifiedDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastModifiedDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsDeleted)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsDeleted)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DeletionDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DeletionDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- :: Single Practice Areas -->
+<section class="single-practice-areas py-100-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="single-practice-areas-head">
+					<h4>خدمات مرتبط</h4>
+				</div>
+				<ul class="single-practice-areas-list">
+					@foreach (var service in Model.SidebarServices)
+					{
+					 
+						<li><a href="/service/@service.UrlParam">@service.Title<i class="fas fa-angle-left"></i></a></li>
+					}
+			 
+				</ul>
+				<div class="brochures">
+					<h5>درخواست مشاوره</h5>
+					<p>جهت ارتباط با ما و درخواست مشاوره به صفحه تماس با ما مراجعه کنید</p>
+					<a href="/contact" class="btn-1">تماس با ما</a>
+				</div>
+				<div class="call-back">
+					<i class="flaticon-call"></i>
+					<h5>تلفن های تمای</h5>
+					<p>+(98) 02122343242</p>
+					<p>+(98) 02122343242</p>
+					<a href="#" class="btn-1 btn-3">مشاوره تلفن</a>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="single-practice-areas-box">
+					<h2>@Model.Service.Title</h2>
+					@Html.Raw(Model.Service.Body)
+					<h4>مقالات و مطالب مرتبط</h4>
+					<div class="row">
+						@foreach (var blog in Model.RelatedBlog)
+						{
+							<div class="col-md-6 col-lg-6">
+								<div class="blog-item">
+									<div class="img-box">
+										<a href="02_blog.html" class="open-post">
+											<img class="img-fluid" src="@blog.ImageUrl" alt="@blog.Title">
+										</a>
+							 
+									</div>
+									<div class="text-box">
+										<span class="blog-date">@blog.CreationDateStr</span>
+										<a href="02_blog.html" class="title-blog">
+											<h5>@blog.Title</h5>
+										</a>
+										<p>@blog.Summery</p>
+										<a href="/blog/@blog.UrlParam" class="link">ادامه مطلب</a>
+									</div>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="single-practice-areas-box">
+				 
+					<h4>مقالات و مطالب مرتبط</h4>
+					<div class="row">
+						@foreach (var blog in Model.RelatedBlog)
+						{
+							<div class="col-md-4 col-lg-4">
+								<div class="blog-item">
+									<div class="img-box">
+										<a href="02_blog.html" class="open-post">
+											<img class="img-fluid" src="@blog.ImageUrl" alt="@blog.Title">
+										</a>
+							 
+									</div>
+									<div class="text-box">
+										<span class="blog-date">@blog.CreationDateStr</span>
+										<a href="/blog/@blog.UrlParam" class="title-blog">
+											<h5>@blog.Title</h5>
+										</a>
+										<p>@blog.Summery</p>
+										<a href="/blog/@blog.UrlParam" class="link">ادامه مطلب</a>
+									</div>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

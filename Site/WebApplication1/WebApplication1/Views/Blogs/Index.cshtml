@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Models.Service>
+﻿@model IEnumerable<Models.Blog>
 
 @{
-ViewBag.Title = "فهرست خدمات" ;
+ViewBag.Title = "فهرست مقالات" ;
     
     Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
 }
@@ -9,15 +9,16 @@ ViewBag.Title = "فهرست خدمات" ;
 <h2>@ViewBag.Title</h2>
 
         @(Html.Kendo().Grid(Model)
-							.Name("Grid")
-							.Columns(columns =>
-							{
-							columns.Bound(model => model.Order);
-							columns.Bound(model => model.Parent.Title).Title("عنوان خدمت پدر");
-							columns.Bound(model => model.Title);
-							columns.Bound(model => model.ImageUrl).Template(@<text><img src="@item.ImageUrl" height="100px" /></text>);
-        columns.Bound(model => model.IsInHome);
+              .Name("Grid")
+              .Columns(columns =>
+                  {
+        columns.Bound(model => model.Title);
+		columns.Bound(model => model.ImageUrl).Template(@<text><img src="@item.ImageUrl" height="100px" /></text>);
+	                  columns.Bound(model => model.Service.Title).Title("خدمت مرتبط");
+
+        columns.Bound(model => model.Visit);
         columns.Bound(model => model.IsActive);
+        columns.Bound(model => model.CreationDate);
 					columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
 							.Template(@<text>
 									@Html.ActionLink("ویرایش", "Edit", new {id = @item.Id}, new {@class = "k-button"})
@@ -26,7 +27,7 @@ ViewBag.Title = "فهرست خدمات" ;
 		})
 		.ToolBar(toolbar =>
 					{				
-						toolbar.Custom().Action("Create","Services").Text("افزودن");                          
+						toolbar.Custom().Action("Create","Blogs").Text("افزودن");                          
 					}
 		)         
 		.DataSource(dataSource => dataSource

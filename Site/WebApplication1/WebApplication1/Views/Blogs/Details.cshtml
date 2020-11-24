@@ -1,0 +1,185 @@
+﻿@model ViewModels.BlogDetailViewModel
+@{
+	ViewBag.Title = Model.Blog.Title;
+	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+
+<section class="breadcrumb-header" id="page" style="background-image: url(/assets/images/header/06_header.jpg)">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="banner">
+					<h1>@Model.Blog.Title</h1>
+					<ul>
+						<li><a href="/">خانه</a></li>
+						<li><i class="fas fa-angle-right"></i></li>
+						<li>@Model.Blog.Title</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="single-bolg py-100-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="widget">
+					<div class="widget-title">
+						<h3>ما را در شبکه های اجتماعی دنبال کنید</h3>
+					</div>
+					<div class="widget-body">
+						<div class="follow">
+							<ul class="icon">
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fab fa-behance"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-title">
+						<h3>گروه های خدمات</h3>
+					</div>
+					<div class="categories">
+						<ul>
+							@foreach (var service in Model.SidebarServices)
+							{
+								<li><a href="/service/@service.UrlParam"><i class="fas fa-folder-open"></i> @service.Title <span><i class="fas fa-angle-left"></i></span></a></li>
+
+							}
+						</ul>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-title">
+						<h3>جدیدترین مقالات</h3>
+					</div>
+					<div class="news-box">
+						
+						@foreach (var blog in Model.SidebarBlog)
+						{
+							<div class="news-item">
+								<img class="img-fluid" src="@blog.ImageUrl" alt="@blog.Title">
+								<div class="item-content">
+									<span><a href="/blog/@blog.UrlParam">@blog.CreationDateStr</a></span>
+									<a href="/blog/@blog.UrlParam" class="title-blog">
+										<h5>@blog.Title</h5>
+									</a>
+								</div>
+							</div>
+						}
+
+					 
+					</div>
+				</div>
+		 
+			</div>
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="blog-item">
+							<div class="img-box">
+								<a href="02_blog.html" class="open-post">
+									<img class="img-fluid" src="@Model.Blog.ImageUrl" alt="@Model.Blog.Title">
+								</a>
+								<ul>
+									@if (Model.Blog.ServiceId != null)
+									{
+										<li><a href="#">@Model.Blog.Service.Title</a></li>
+									}
+								</ul>
+							</div>
+							<div class="text-box">
+								<h5>@Model.Blog.Title</h5>
+								@Html.Raw(Model.Blog.Body)
+								
+								<div class="share-post">
+									<span>به اشتراک گذاری مطلب:</span>
+									<ul>
+										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+										<li><a href="#"><i class="fab fa-behance"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="item-comments">
+							<div class="title">
+								<h4>نظرات</h4>
+							</div>
+							<div class="inner-comments">
+								@foreach (var comment in Model.BlogComments)
+								{
+									<div class="comments-box">
+										<div class="img-box">
+											<img class="img-fluid" src="/assets/images/testimonial/01_testimonial.jpg" alt="01 Testimonial">
+										</div>
+										<div class="text-box">
+											<h5>@comment.Name</h5>
+											<div class="time">@comment.CreationDateStr</div>
+											<p>@comment.Message</p>
+											<a href="#">Reply</a>
+										</div>
+									</div>
+									 if(!string.IsNullOrEmpty(comment.Response))
+									 {
+										 <div class="comments-box reply">
+											 <div class="img-box">
+												 <img class="img-fluid" src="/assets/images/testimonial/02_testimonial.jpg" alt="02 Testimonial">
+											 </div>
+											 <div class="text-box">
+												 <h5>صور آخر</h5>
+												 <div class="time">@comment.ResponseDate</div>
+												 <p>@comment.Response</p>
+												 <a href="#">Reply</a>
+											 </div>
+										 </div>
+									 }
+								}
+						 
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="add-comments">
+							<div class="title">
+								<h4>ثبت نظر</h4>
+							</div>
+							<div class="inner-add-comments">
+								<div class="row">
+									<div class="col-md-6 inner-add-comments-box">
+										<input type="text" placeholder="نام">
+									</div>
+									<div class="col-md-6 inner-add-comments-box">
+										<input type="Email" placeholder="ایمیل">
+									</div>
+									<div class="col-md-12 inner-add-comments-box">
+										<input type="text" placeholder="سایت">
+									</div>
+									<div class="col-md-12 inner-add-comments-box">
+										<textarea placeholder="نظر شما"></textarea>
+									</div>
+									<div class="col-md-12 inner-add-comments-box">
+										<a href="" class="btn-1">ثبت نظر</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+</section>

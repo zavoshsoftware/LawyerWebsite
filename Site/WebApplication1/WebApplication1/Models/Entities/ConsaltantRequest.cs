@@ -19,8 +19,10 @@ namespace Models
         [Display(Name = "شماره موبایل")]
         public string CellNumber { get; set; }
         [Display(Name = "متن درخواست")]
+        [DataType(DataType.MultilineText)]
         public string Body { get; set; }
         [Display(Name = "پاسخ درخواست")]
+        [DataType(DataType.MultilineText)]
         public string Response { get; set; }
     }
 }

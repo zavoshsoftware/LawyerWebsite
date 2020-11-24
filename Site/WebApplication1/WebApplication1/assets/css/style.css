@@ -2649,7 +2649,7 @@ header.navs.active{
     color: #C89D66;
 }
 .single-practice-areas-list li a i{
-    float: right;
+    float: left;
 }
 .call-back{
     padding: 40px;
@@ -2887,7 +2887,7 @@ header.navs.active{
     margin-right: 5px;
 }
 .widget .categories ul li a span{
-    float: right;
+    float: left;
 }
 .widget .categories ul li:hover a{
     color: #C89D66;
@@ -2920,13 +2920,13 @@ header.navs.active{
     margin-bottom: 0px;
 }
 .news-item img{
-    float: left;
+    float: right;
     height: 60px;
     width: 60px;
     border-radius: 3px;
 }
 .news-item .item-content{
-    padding-left: 70px;
+    padding-right: 70px;
 }
 .news-item .item-content span a{
     color: #C89D66;
@@ -2969,7 +2969,7 @@ header.navs.active{
     display: inline-block;
 }
 .share-post ul{
-    float: right;
+    float: left;
 }
 .share-post ul li{
     display: inline-block;

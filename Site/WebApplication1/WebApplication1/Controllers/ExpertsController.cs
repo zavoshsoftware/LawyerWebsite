@@ -8,55 +8,46 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Models;
-using ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    public class ServicesController : Controller
+    public class ExpertsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: Services
+        // GET: Experts
         public ActionResult Index()
         {
-            var services = db.Services.Include(s => s.Parent).Where(s=> s.IsDeleted==false).OrderByDescending(s=>s.CreationDate);
-            return View(services.ToList());
+            return View(db.Experts.Where(a=>a.IsDeleted==false).OrderByDescending(a=>a.CreationDate).ToList());
         }
 
-        [Route("service/{urlParam}")]
-        public ActionResult Details(string urlParam)
+        // GET: Experts/Details/5
+        public ActionResult Details(Guid? id)
         {
-
-            Service service = db.Services.FirstOrDefault(c => c.UrlParam == urlParam);
-            if (service == null)
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Expert expert = db.Experts.Find(id);
+            if (expert == null)
             {
                 return HttpNotFound();
             }
-
-            ServiceDetailViewModel result= new ServiceDetailViewModel()
-            {
-                Service = service,
-                SidebarServices = db.Services.Where(c=>c.ParentId==service.ParentId&&c.IsDeleted==false&&c.IsActive).ToList(),
-                RelatedBlog = db.Blogs.Where(c=>c.ServiceId==service.Id).ToList()
-            };
-
-      
-            return View(result);
+            return View(expert);
         }
 
-        // GET: Services/Create
+        // GET: Experts/Create
         public ActionResult Create()
         {
-            ViewBag.ParentId = new SelectList(db.Services.Where(c=>c.ParentId==null), "Id", "Title");
             return View();
         }
 
-        // POST: Services/Create
+        // POST: Experts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Service service, HttpPostedFileBase fileUpload)
+        public ActionResult Create(Expert expert, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
@@ -68,49 +59,44 @@ namespace WebApplication1.Controllers
                     string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
                                          + Path.GetExtension(filename);
 
-                    string newFilenameUrl = "/Uploads/Service/" + newFilename;
+                    string newFilenameUrl = "/Uploads/team/" + newFilename;
                     string physicalFilename = Server.MapPath(newFilenameUrl);
 
                     fileUpload.SaveAs(physicalFilename);
 
-                    service.ImageUrl = newFilenameUrl;
+                    expert.ImageUrl = newFilenameUrl;
                 }
-                 
+
                 #endregion
-                service.IsDeleted=false;
-				service.CreationDate= DateTime.Now; 
-                service.Id = Guid.NewGuid();
-                db.Services.Add(service);
+                expert.IsDeleted=false;
+				expert.CreationDate= DateTime.Now; 
+                expert.Id = Guid.NewGuid();
+                db.Experts.Add(expert);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ParentId = new SelectList(db.Services.Where(c => c.ParentId == null), "Id", "Title", service.ParentId);
-            return View(service);
+            return View(expert);
         }
 
-        // GET: Services/Edit/5
+        // GET: Experts/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Service service = db.Services.Find(id);
-            if (service == null)
+            Expert expert = db.Experts.Find(id);
+            if (expert == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ParentId = new SelectList(db.Services.Where(c => c.ParentId == null), "Id", "Title", service.ParentId);
-            return View(service);
+            return View(expert);
         }
 
-        // POST: Services/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Service service, HttpPostedFileBase fileUpload)
+        public ActionResult Edit(Expert expert, HttpPostedFileBase fileUpload)
         {
             if (ModelState.IsValid)
             {
@@ -122,48 +108,47 @@ namespace WebApplication1.Controllers
                     string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
                                          + Path.GetExtension(filename);
 
-                    string newFilenameUrl = "/Uploads/Service/" + newFilename;
+                    string newFilenameUrl = "/Uploads/team/" + newFilename;
                     string physicalFilename = Server.MapPath(newFilenameUrl);
 
                     fileUpload.SaveAs(physicalFilename);
 
-                    service.ImageUrl = newFilenameUrl;
+                    expert.ImageUrl = newFilenameUrl;
                 }
 
                 #endregion
-                service.IsDeleted = false;
-				service.LastModifiedDate = DateTime.Now;
-                db.Entry(service).State = EntityState.Modified;
+                expert.IsDeleted = false;
+				expert.LastModifiedDate = DateTime.Now;
+                db.Entry(expert).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ParentId = new SelectList(db.Services.Where(c => c.ParentId == null), "Id", "Title", service.ParentId);
-            return View(service);
+            return View(expert);
         }
 
-        // GET: Services/Delete/5
+        // GET: Experts/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Service service = db.Services.Find(id);
-            if (service == null)
+            Expert expert = db.Experts.Find(id);
+            if (expert == null)
             {
                 return HttpNotFound();
             }
-            return View(service);
+            return View(expert);
         }
 
-        // POST: Services/Delete/5
+        // POST: Experts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Service service = db.Services.Find(id);
-			service.IsDeleted=true;
-			service.DeletionDate=DateTime.Now;
+            Expert expert = db.Experts.Find(id);
+			expert.IsDeleted=true;
+			expert.DeletionDate=DateTime.Now;
  
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -179,4 +164,3 @@ namespace WebApplication1.Controllers
         }
     }
 }
-

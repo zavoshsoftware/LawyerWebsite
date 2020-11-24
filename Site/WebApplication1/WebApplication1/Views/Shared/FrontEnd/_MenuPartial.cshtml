@@ -1,54 +1,135 @@
 ﻿@model ViewModels._BaseViewModel
 
-				<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a href="/" class="nav-link">
-						خانه
+<header class="navs">
+	<div class="nav-top">
+		<div class="container">
+			<div class="nav-top-box d-flex align-items-center justify-content-between rtl">
+				<ul class="info">
+					<li><span>ایمیل:</span> info@domain.com</li>
+					<li><span>تلفن:</span> +(98) 21-22222222</li>
+				</ul>
+				<ul class="icon-follow">
+					<li><a class="icon" href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a class="icon" href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a class="icon" href="#"><i class="fas fa-rss"></i></a></li>
+					@*<li><a class="icon open-search-box" href="#"><i class="fas fa-search"></i></a></li>
+						<li><a class="icon open-menu" href="#"><i class="fas fa-th"></i></a></li>*@
+					<li><a class="btn-1 btn-2" href="01_contact.html">مشاوره آنلاین رایگان</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- :: Navbar -->
+	<nav class="nav-bar">
+		<div class="container">
+			<div class="box-content d-flex align-items-center justify-content-between rtl">
+				<div class="logo">
+					<a href="/" class="logo-nav">
+						<img class="img-fluid one" src="/assets/images/logo/01_logo.png" alt="01 Logo">
+						<img class="img-fluid two" src="/assets/images/logo/02_logo.png" alt="02 Logo">
 					</a>
-				</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								خدمات
-								<i class='bx bx-chevron-down'></i>
-							</a>
-							<ul class="dropdown-menu">
-								@foreach (var service in Model.MenuItems)
-								{
-									<li class="nav-item">
-										<a href="/service/@service.UrlParam" class="nav-link">
-											@service.Title
-										</a>
-									</li>
-								}
-							
-						 
+					<a href="#open-nav-bar-menu" class="open-nav-bar">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+				</div>
+				<div class="nav-bar-link" id="open-nav-bar-menu">
+					<ul class="level-1">
+						<li><a href="/" class="color-active">خانه</a></li>
+						@foreach (var item in Model.MenuItems)
+						{
+							<li class="has-menu">
+								<a href="/service/@item.ParentService.UrlParam">@item.ParentService.Title</a>
+								<ul class="level-2">
+									@foreach (var childService in item.ChildServices)
+									{
+											<li><a href="/service/@childService.UrlParam">@childService.Title</a></li>
+									}
+								 
+								</ul>
+							</li>
+						}
+						@*<li class="has-menu">
+							<a href="#">خانواده</a>
+							<ul class="level-2">
+								<li><a href="#">	طلاق</a></li>
+								<li><a href="#">	طلاق توافقی</a></li>
+								<li><a href="#">	طلاق از طرف مرد</a></li>
+								<li><a href="#">	طلاق از طرف زن</a></li>
+								<li><a href="#">	مهریه</a></li>
+								<li><a href="#">	نفقه</a></li>
+								<li><a href="#">	اجرت المثل</a></li>
+								<li><a href="#">	حضانت فرزند</a></li>
+								<li><a href="#">	استرداد جهیزیه</a></li>
+
+
 							</ul>
 						</li>
-					<li class="nav-item">
-						<a href="/expert" class="nav-link">
-							متخصصین
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="/blog" class="nav-link">
-							وبلاگ
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="/#" class="nav-link">
-							درباره ما
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="/contact" class="nav-link">
-							تماس با ما
-						</a>
-					</li>
-					<li class="nav-btn">
-						<a href="/appointment" class="default-btn">
-							درخواست وقت مشاوره
-							<span></span>
-						</a>
-					</li>
+						<li class="has-menu">
+							<a href="#">
+								کیفری
+							</a>
+							<ul class="level-2">
+								<li><a href="#">سرقت</a></li>
+								<li><a href="#">قتل</a></li>
+								<li><a href="#">مواد مخدر</a></li>
+								<li><a href="#">رابطه نامشروع</a></li>
+								<li><a href="#">ضرب و جرح</a></li>
+							</ul>
+						</li>
+						<li class="has-menu">
+							<a href="#">مالی</a>
+							<ul class="level-2">
+								<li>
+									<a href="#">
+										مطالبه وجه چک
+
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										مطالبه وجه سفته
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										مطالبه وجه
+									</a>
+								</li>
+								<li><a href="#">	توقیف اموال</a></li>
+							</ul>
+						</li>
+						<li class="has-menu">
+							<a href="#">
+								ملکی و حقوقی
+							</a>
+
+							<ul class="level-2">
+								<li><a href="#">تخلیه ملک</a></li>
+								<li><a href="#">مطالبه سرقفلی و  حق کسب</a></li>
+								<li><a href="#">افراز ملک مشاع</a></li>
+								<li><a href="#">	فروش ملک مشاع</a></li>
+								<li><a href="#">	تخلیه ملک مسکونی</a></li>
+								<li><a href="#">فک رهن</a></li>
+							</ul>
+						</li>*@
+
+						<li><a href="/">مقالات</a></li>
+						<li><a href="/">درباره ما</a></li>
+						<li><a href="/">تماس با ما</a></li>
+
 					</ul>
-	
+				</div>
+				<div class="info-nav">
+					<i class="flaticon-call"></i>
+					<div class="contact-nav">
+						<p>+(98) 2122909382</p>
+						<span>جهت تعیین وقت مشاوره</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>

@@ -1,193 +1,8 @@
 ﻿
 @{
-    Layout = null;
+	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-	<!-- :: Required Meta Tags -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- :: Bootstrap CSS -->
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-
-	<!-- :: Favicon -->
-	<link rel="icon" type="image/png" href="/assets/images/favicon.png">
-
-	<!-- :: Title -->
-	<title>موسسه حقوقی صور آخر</title>
-
-	<!-- :: Google Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
-
-	<!-- :: Fontawesome -->
-	<link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css">
-
-	<!-- :: Flaticon -->
-	<link rel="stylesheet" href="/assets/fonts/flaticon/css/flaticon.css">
-
-	<!-- :: OWL Carousel -->
-	<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
-
-	<!-- :: Nice Select CSS -->
-	<link rel="stylesheet" href="/assets/css/nice-select.css">
-
-	<!-- :: Lity -->
-	<link rel="stylesheet" href="/assets/css/lity.min.css">
-
-	<!-- :: Animate CSS -->
-	<link rel="stylesheet" href="/assets/css/animate.css">
-
-	<!-- :: Style CSS -->
-	<link rel="stylesheet" href="/assets/css/style.css">
-
-	<!-- :: Style Responsive CSS -->
-	<link rel="stylesheet" href="/assets/css/responsive.css">
-
-	<!--[if lt IE 9]>
-					<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-					<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	<link href="~/assets/css/style-zavosh.css" rel="stylesheet" />
-</head>
-
-<body>
-	<!-- :: Loading -->
-	<div class="loading">
-		<div class="loading-box">
-			<div class="sk-fading-circle">
-				<div class="sk-circle1 sk-circle"></div>
-				<div class="sk-circle2 sk-circle"></div>
-				<div class="sk-circle3 sk-circle"></div>
-				<div class="sk-circle4 sk-circle"></div>
-				<div class="sk-circle5 sk-circle"></div>
-				<div class="sk-circle6 sk-circle"></div>
-				<div class="sk-circle7 sk-circle"></div>
-				<div class="sk-circle8 sk-circle"></div>
-				<div class="sk-circle9 sk-circle"></div>
-				<div class="sk-circle10 sk-circle"></div>
-				<div class="sk-circle11 sk-circle"></div>
-				<div class="sk-circle12 sk-circle"></div>
-			</div>
-		</div>
-	</div>
-
-	<!-- :: Navs -->
-	<header class="navs">
-		<div class="nav-top">
-			<div class="container">
-				<div class="nav-top-box d-flex align-items-center justify-content-between rtl">
-					<ul class="info">
-						<li><span>ایمیل:</span> info@domain.com</li>
-						<li><span>تلفن:</span> +(98) 21-22222222</li>
-					</ul>
-					<ul class="icon-follow">
-						<li><a class="icon" href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a class="icon" href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a class="icon" href="#"><i class="fas fa-rss"></i></a></li>
-						@*<li><a class="icon open-search-box" href="#"><i class="fas fa-search"></i></a></li>
-						<li><a class="icon open-menu" href="#"><i class="fas fa-th"></i></a></li>*@
-						<li><a class="btn-1 btn-2" href="01_contact.html">مشاوره آنلاین رایگان</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<!-- :: Navbar -->
-		<nav class="nav-bar">
-			<div class="container">
-				<div class="box-content d-flex align-items-center justify-content-between rtl">
-					<div class="logo">
-						<a href="index.html" class="logo-nav">
-							<img class="img-fluid one" src="/assets/images/logo/01_logo.png" alt="01 Logo">
-							<img class="img-fluid two" src="/assets/images/logo/02_logo.png" alt="02 Logo">
-						</a>
-						<a href="#open-nav-bar-menu" class="open-nav-bar">
-							<span></span>
-							<span></span>
-							<span></span>
-						</a>
-					</div>
-					<div class="nav-bar-link" id="open-nav-bar-menu">
-						<ul class="level-1">
-							<li><a href="/" class="color-active">خانه</a></li>
-							
-							<li class="has-menu">
-								<a href="#">خانواده</a>
-								<ul class="level-2">
-									<li><a href="#">	طلاق</a></li>
-									<li><a href="#">	طلاق توافقی</a></li>
-									<li><a href="#">	طلاق از طرف مرد</a></li>
-									<li><a href="#">	طلاق از طرف زن</a></li>
-									<li><a href="#">	مهریه</a></li>
-									<li><a href="#">	نفقه</a></li>
-									<li><a href="#">	اجرت المثل</a></li>
-									<li><a href="#">	حضانت فرزند</a></li>
-									<li><a href="#">	استرداد جهیزیه</a></li>
-
-							 
-								</ul>
-							</li>
-							<li class="has-menu">
-								<a href="#">کیفری
-								</a>
-								<ul class="level-2">
-									<li><a href="#">سرقت</a></li>
-									<li><a href="#">قتل</a></li>
-									<li><a href="#">مواد مخدر</a></li>
-									<li><a href="#">رابطه نامشروع</a></li>
-									<li><a href="#">ضرب و جرح</a></li>
-								</ul>
-							</li>
-							<li class="has-menu">
-								<a href="#">مالی</a>
-								<ul class="level-2">
-									<li><a href="#">مطالبه وجه چک
-							
-									</a></li>
-									<li><a href="#">			مطالبه وجه سفته
-									</a></li>
-									<li><a href="#">	مطالبه وجه
-									</a></li>
-									<li><a href="#">	توقیف اموال</a></li>
-								</ul>
-							</li>
-							<li class="has-menu">
-								<a href="#">ملکی و حقوقی
-								</a>
-								
-								<ul class="level-2">
-									<li><a href="#">تخلیه ملک</a></li>
-									<li><a href="#">مطالبه سرقفلی و  حق کسب</a></li>
-									<li><a href="#">افراز ملک مشاع</a></li>
-									<li><a href="#">	فروش ملک مشاع</a></li>
-									<li><a href="#">	تخلیه ملک مسکونی</a></li>
-									<li><a href="#">فک رهن</a></li>
-								</ul>
-							</li>
-					 
-							<li><a href="/">مقالات</a></li>
-							<li><a href="/">درباره ما</a></li>
-							<li><a href="/">تماس با ما</a></li>
-
-						</ul>
-					</div>
-					<div class="info-nav">
-						<i class="flaticon-call"></i>
-						<div class="contact-nav">
-							<p>+(98) 2122909382</p>
-							<span>جهت تعیین وقت مشاوره</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</header>
 
   
 	<header class="header" id="page">
@@ -262,7 +77,6 @@
 		</div>
 	</section>
 
-	<!-- :: About -->
 	<section class="about py-100" id="about-us">
 		<div class="container">
 			<div class="row">
@@ -325,7 +139,6 @@
 		</div>
 	</section>
 
-	<!-- :: Practice Area -->
 	<section class="practice-area py-100-70">
 		<div class="container">
 			<div class="row">
@@ -401,7 +214,6 @@
 		</div>
 	</section>
 
-	<!-- :: History -->
 	<section class="history">
 		<div class="bg-section">
 			<div class="overlay"></div>
@@ -483,11 +295,7 @@
 			</div>
 		</div>
 	</section>
-
-  
-
-
-	<!-- :: Advisors -->
+	 
 	<section class="advisors py-100-70">
 		<div class="container">
 			<div class="row">
@@ -577,7 +385,6 @@
 		</div>
 	</section>
 
-	<!-- :: Blog -->
 	<section class="bolg py-100-70">
 		<div class="container">
 			<div class="row">
@@ -655,98 +462,6 @@
 		</div>
 	</section>
 
-	<!-- :: Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-6 col-lg-3">
-					<div class="logo">
-						<img class="img-fluid" src="/assets/images/logo/03_logo.png" alt="Footer Logo">
-						<p>موسسه حقوقی صور آخر با کادری مجرب، آماده ارائه خدمات در کلیه امور حقوقی از جلمه خانواده، کیفری، امور ثبتی، امور مالی و ... می باشد.</p>
-						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-2">
-					<div class="footer-title">
-						<h4>صور آخر</h4>
-					</div>
-					<ul class="links">
-						<li><a href="01_about.html">درباره ما</a></li>
-						<li><a href="01_advisors.html">وکلای ما</a></li>
-						<li><a href="01_testimonial.html">تماس با ما</a></li>
-						<li><a href="01_case-study.html">خدمات ما</a></li>
-						<li><a href="02_blog.html">مقالات</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-2">
-					<div class="footer-title">
-						<h4>خدمات حقوقی</h4>
-					</div>
-					<ul class="links">
-						<li><a href="01_practice-areas.html">خانواده</a></li>
-						<li><a href="01_timeline.html">کیفری</a></li>
-						<li><a href="01_sponsors.html">مالی</a></li>
-						<li><a href="01_faq.html">حقوقی</a></li>
-						<li><a href="01_shop.html">ملکی</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-12 col-md-6 col-lg-4">
-					<div class="newsletter">
-						<h5>خبرنامه</h5>
-						<p>با عضویت در خبرنامه صور آخر از جدیدترین مقالات و تازه های علمی با خبر شوید</p>
-						<div class="nlform">
-							<input type="email" name="email" placeholder="ایمیل خود را وارد کنید ">
-							<a href="#"><i class="fas fa-arrow-left"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="copyright">
-			<div class="container">
-				<p>کلیه حقوق این سایت متعلق به موسسه صور آخر می باشد. طراحی سایت و سئو <a href="#">زاوش</a></p>
-			 
-			</div>
-		</div>
-	</footer>
 
-	<!-- :: Scroll UP -->
-	<div class="scroll-up">
-		<a href="#page" class="move-section">
-			<i class="fas fa-long-arrow-alt-up"></i>
-		</a>
-	</div>
 
-	<!-- :: jQuery JS -->
-	<script src="/assets/js/jquery-3.5.1.min.js"></script>
-
-	<!-- :: Popper JS -->
-	<script src="/assets/js/popper.min.js"></script>
-
-	<!-- :: BootStrap JS -->
-	<script src="/assets/js/bootstrap.min.js"></script>
-
-	<!-- :: OWL Carousel -->
-	<script src="/assets/js/owl.carousel.min.js"></script>
-
-	<!-- :: Nice Select -->
-	<script src="/assets/js/jquery.nice-select.min.js"></script>
-
-	<!-- :: Waypoints -->
-	<script src="/assets/js/jquery.waypoints.min.js"></script>
-
-	<!-- :: CounterUp -->
-	<script src="/assets/js/jquery.counterup.min.js"></script>
-
-	<!-- :: Lity -->
-	<script src="/assets/js/lity.min.js"></script>
-
-	<!-- :: Main JS -->
-	<script src="/assets/js/main.js"></script>
-</body>
-</html>
+	

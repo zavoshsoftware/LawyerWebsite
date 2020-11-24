@@ -14,7 +14,6 @@ namespace Models
         public Blog()
         {
             BlogComments = new List<BlogComment>();
-            ServiceBlogs = new List<ServiceBlog>();
         }
         [Display(Name = "عنوان مقاله")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
@@ -44,13 +43,20 @@ namespace Models
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Body { get; set; }
 
-
-
-      
-
-
         public virtual ICollection<BlogComment> BlogComments { get; set; }
-        public virtual ICollection<ServiceBlog> ServiceBlogs { get; set; }
-     
+        public virtual Service Service { get; set; }
+
+        [Display(Name= "خدمت مرتبط")]
+        public Guid? ServiceId { get; set; }
+
+        internal class Configuration : EntityTypeConfiguration<Blog>
+        {
+            public Configuration()
+            {
+                HasOptional(p => p.Service)
+                    .WithMany(j => j.Blogs)
+                    .HasForeignKey(p => p.ServiceId);
+            }
+        }
     }
 }

@@ -27,7 +27,6 @@ namespace Models
         public DbSet<TextItem> TextItems { get; set; }
         public DbSet<TextItemType> TextItemTypes { get; set; }
         public DbSet<ContactUsForm> ContactUsForms { get; set; } 
-        public DbSet<ServiceBlog> ServiceBlogs { get; set; } 
         public DbSet<ServiceComment> ServiceComments { get; set; } 
         public DbSet<Newsletter> Newsletters { get; set; } 
     }

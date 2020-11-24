@@ -721,7 +721,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BlogCommentsController.cs" />
+    <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="Controllers\ConsaltantRequestsController.cs" />
+    <Compile Include="Controllers\ContactUsFormsController.cs" />
+    <Compile Include="Controllers\ExpertsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewslettersController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -729,6 +734,14 @@
     <Compile Include="Helpers\BaseViewModelHelper.cs" />
     <Compile Include="Helpers\CodeGenerator.cs" />
     <Compile Include="Helpers\PersianCulture.cs" />
+    <Compile Include="Migrations\202011240719055_V01.cs" />
+    <Compile Include="Migrations\202011240719055_V01.Designer.cs">
+      <DependentUpon>202011240719055_V01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011240817541_V02.cs" />
+    <Compile Include="Migrations\202011240817541_V02.Designer.cs">
+      <DependentUpon>202011240817541_V02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -743,11 +756,15 @@
     <Compile Include="Models\Entities\Expert.cs" />
     <Compile Include="Models\Entities\Role.cs" />
     <Compile Include="Models\Entities\Service.cs" />
-    <Compile Include="Models\Entities\ServiceBlog.cs" />
     <Compile Include="Models\Entities\TextItem.cs" />
     <Compile Include="Models\Entities\TextItemType.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BlogDetailViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\BlogListViewModel.cs" />
+    <Compile Include="ViewModels\ServiceDetailViewModel.cs" />
+    <Compile Include="ViewModels\_BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -1040,6 +1057,32 @@
     <Content Include="Views\Services\Details.cshtml" />
     <Content Include="Views\Services\Edit.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Blogs\Create.cshtml" />
+    <Content Include="Views\Blogs\Delete.cshtml" />
+    <Content Include="Views\Blogs\Details.cshtml" />
+    <Content Include="Views\Blogs\Edit.cshtml" />
+    <Content Include="Views\Blogs\Index.cshtml" />
+    <Content Include="Views\ConsaltantRequests\Create.cshtml" />
+    <Content Include="Views\ConsaltantRequests\Delete.cshtml" />
+    <Content Include="Views\ConsaltantRequests\Details.cshtml" />
+    <Content Include="Views\ConsaltantRequests\Edit.cshtml" />
+    <Content Include="Views\ConsaltantRequests\Index.cshtml" />
+    <Content Include="Views\Experts\Create.cshtml" />
+    <Content Include="Views\Experts\Delete.cshtml" />
+    <Content Include="Views\Experts\Details.cshtml" />
+    <Content Include="Views\Experts\Edit.cshtml" />
+    <Content Include="Views\Experts\Index.cshtml" />
+    <Content Include="Views\Newsletters\Create.cshtml" />
+    <Content Include="Views\Newsletters\Delete.cshtml" />
+    <Content Include="Views\Newsletters\Details.cshtml" />
+    <Content Include="Views\Newsletters\Edit.cshtml" />
+    <Content Include="Views\Newsletters\Index.cshtml" />
+    <Content Include="Views\ContactUsForms\Create.cshtml" />
+    <Content Include="Views\ContactUsForms\Delete.cshtml" />
+    <Content Include="Views\ContactUsForms\Details.cshtml" />
+    <Content Include="Views\ContactUsForms\Edit.cshtml" />
+    <Content Include="Views\ContactUsForms\Index.cshtml" />
+    <Content Include="Views\Blogs\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1049,6 +1092,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Blog\" />
+    <Folder Include="Uploads\Editor\" />
+    <Folder Include="Uploads\Gallery\" />
+    <Folder Include="Uploads\Service\" />
+    <Folder Include="Uploads\team\" />
+    <Folder Include="Uploads\Text\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011240719055_V01.resx">
+      <DependentUpon>202011240719055_V01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011240817541_V02.resx">
+      <DependentUpon>202011240817541_V02.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

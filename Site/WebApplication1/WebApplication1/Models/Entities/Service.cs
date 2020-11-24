@@ -13,9 +13,9 @@ namespace Models
     {
         public Service()
         {
-            ServiceBlogs = new List<ServiceBlog>();
             Services = new List<Service>();
             ServiceComments = new List<ServiceComment>();
+            Blogs = new List<Blog>();
         }
         [Display(Name = "عنوان")]
         public string Title { get; set; }
@@ -46,10 +46,8 @@ namespace Models
         public virtual Service Parent { get; set; }
         public virtual ICollection<Service> Services { get; set; }
         public virtual ICollection<ServiceComment> ServiceComments { get; set; }
+        public virtual ICollection<Blog> Blogs { get; set; }
         
-        public virtual ICollection<ServiceBlog> ServiceBlogs { get; set; }
-
-
         internal class Configuration : EntityTypeConfiguration<Service>
         {
             public Configuration()

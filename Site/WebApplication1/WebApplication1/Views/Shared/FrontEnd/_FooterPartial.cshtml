@@ -1,136 +1,58 @@
-﻿@model ViewModels._BaseViewModel
-<footer class="footer-area bg-color pt-70 pb-70">
+﻿<footer class="footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3 col-sm-6">
-				<div class="footer-widget ">
-					<h2>درباره مستانه</h2>
-					<p>
-						موسسه روانشناسی مستانه با ارائه خدماتی در زمینه های مشاوره، درمان، دوره های آموزشی اشنایی با سبک و مهارت های زندگی با هدف تحکیم و تقویت نهاد خانواده، توسعه فرهنگی و سرگرمی ها و پیدایش استعداد و خلاقیت های زندگی و هنری در خدمت هموطنان عزیز می باشد.
-					</p>
-
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-sm-6">
-				<div class="footer-widget ">
-					<h2>لینک های مفید</h2>
-					<ul class="widget-list">
-						<li>
-							<a href="#">
-								<i class="bx bx-check-circle"></i>
-								لیست خدمات
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="bx bx-check-circle"></i>
-
-								درخواست مشاوره
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="bx bx-check-circle"></i>
-
-								متخصصین مستانه
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="bx bx-check-circle"></i>
-
-								وبلاگ
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="bx bx-check-circle"></i>
-
-								درباره ما
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="bx bx-check-circle"></i>
-
-								تماس با ما
-							</a>
-						</li>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="logo">
+					<img class="img-fluid" src="/assets/images/logo/03_logo.png" alt="Footer Logo">
+					<p>موسسه حقوقی صور آخر با کادری مجرب، آماده ارائه خدمات در کلیه امور حقوقی از جلمه خانواده، کیفری، امور ثبتی، امور مالی و ... می باشد.</p>
+					<ul>
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-3 col-sm-6">
-				<div class="footer-widget">
-					<h2>آخرین مطالب وبلاک</h2>
-					<ul class="widget-list">
-						@foreach (var blog in Model.FooterBlogs)
-						{
-							<li>
-								<a href="/blog/post/@blog.UrlParam">
-								 @blog.Title
-								</a>
-							</li>
-						}
-				
-						 
-					</ul>
+			<div class="col-sm-6 col-md-6 col-lg-2">
+				<div class="footer-title">
+					<h4>صور آخر</h4>
 				</div>
+				<ul class="links">
+					<li><a href="01_about.html">درباره ما</a></li>
+					<li><a href="01_advisors.html">وکلای ما</a></li>
+					<li><a href="01_testimonial.html">تماس با ما</a></li>
+					<li><a href="01_case-study.html">خدمات ما</a></li>
+					<li><a href="02_blog.html">مقالات</a></li>
+				</ul>
 			</div>
-
-			<div class="col-lg-3 col-sm-6">
-				<div class="footer-widget">
-					<h2>اطلاعات تماس</h2>
-					<p>
-						تهران . نیاوران سه راه یاسر جنب بانک پاسارگاد پلاک 234 طبقه 5 واحد 503
-					</p>
-					<ul class="contact">
-
-						<li>
-							<a href="tel:+267-784-4336">
-								<i class='bx bx-phone-call'></i>
-								021.22280882 , 021.22280883
-
-							</a>
-						</li>
-						<li>
-							<a href="mailto:info@mastaneclinic.com">
-								<i class='bx bx-message-dots'></i>
-								info [at] mastaneclinic.com
-							</a>
-						</li>
-					</ul>
-					<ul class="social-link">
-						<li>
-							<a href="#" target="_blank">
-								<i class='bx bxl-facebook bg-1'></i>
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<i class='bx bxl-twitter bg-2'></i>
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<i class='bx bxl-linkedin bg-3'></i>
-							</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-								<i class='bx bxl-instagram bg-4'></i>
-							</a>
-						</li>
-					</ul>
+			<div class="col-sm-6 col-md-6 col-lg-2">
+				<div class="footer-title">
+					<h4>خدمات حقوقی</h4>
+				</div>
+				<ul class="links">
+					<li><a href="01_practice-areas.html">خانواده</a></li>
+					<li><a href="01_timeline.html">کیفری</a></li>
+					<li><a href="01_sponsors.html">مالی</a></li>
+					<li><a href="01_faq.html">حقوقی</a></li>
+					<li><a href="01_shop.html">ملکی</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-4">
+				<div class="newsletter">
+					<h5>خبرنامه</h5>
+					<p>با عضویت در خبرنامه صور آخر از جدیدترین مقالات و تازه های علمی با خبر شوید</p>
+					<div class="nlform">
+						<input type="email" name="email" placeholder="ایمیل خود را وارد کنید ">
+						<a href="#"><i class="fas fa-arrow-left"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</footer>
-<!-- End Footer Area -->
-<!-- Footer Bottom Area -->
-<div class="footer-bottom-area">
-	<div class="container">
-		<p>تمامی حقوق این وب سایت متعلق به کلینیک مستانه می باشد. طراحی و سئو سایت زاوش</p>
+	<div class="copyright">
+		<div class="container">
+			<p>کلیه حقوق این سایت متعلق به موسسه صور آخر می باشد. طراحی سایت و سئو <a href="#">زاوش</a></p>
+
+		</div>
 	</div>
-</div>
+</footer>

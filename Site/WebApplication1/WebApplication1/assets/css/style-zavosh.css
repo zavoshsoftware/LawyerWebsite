@@ -16,7 +16,7 @@ body, p, a, h1, h2, h3, h4, h5, h6, ul, li, input, button, table, th, td {
     text-align: right;
 }
 
-#about-us .row, .quote .row, .bolg .row, .footer .row {
+#about-us .row, .quote .row, .bolg .row, .footer .row, .breadcrumb-header .row, .single-practice-areas .row, .single-bolg .row{
     direction: rtl;
     text-align: right;
 }
@@ -24,3 +24,4 @@ body, p, a, h1, h2, h3, h4, h5, h6, ul, li, input, button, table, th, td {
 footer p {
     text-align: justify;
 }
+
