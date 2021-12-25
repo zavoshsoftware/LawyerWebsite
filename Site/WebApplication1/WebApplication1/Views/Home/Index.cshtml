@@ -1,467 +1,363 @@
-﻿
+﻿@model ViewModels.HomeViewModel
 @{
-	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
-
+		Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+		ViewBag.Title = "موسسه حقوقی کاخ عدالت منجی";
+		ViewBag.Canonical = "https://kakheedalat.com/";
 }
 
-  
-	<header class="header" id="page">
-		<div class="header-owl owl-carousel owl-theme">
-			<div class="sec-hero display-table" style="background-image: url(/assets/images/header/01_header.jpg)">
-				<div class="table-cell">
-					<div class="overlay"></div>
-					<div class="container">
-						<div class="row slide-item">
-							<div class="col-lg-6">
-								<div class="banner">
-									<div class="headline-top">پذیرش وکالت و شکواییه</div>
-									<h1 class="handline">مشاوره حقوقی</h1>
-									<p class="about-website">موسسه حقوقی صور آخر با کادری مجرب آماده ارائه خدمات حقوقی به مشتریان گرامی می باشد</p>
-									<a class="btn-1 btn-2 move-section" href="#">اطلاعات بیشتر</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="sec-hero display-table" style="background-image: url(/assets/images/header/03_header.jpg)">
-				<div class="table-cell">
-					<div class="overlay"></div>
-					<div class="container">
-						<div class="row slide-item">
-							<div class="col-lg-6">
-								<div class="banner">
-									<div class="headline-top">گروه ولاکی صور آخر</div>
-									<h1 class="handline">قبول وکلات در تمام زمینه های حقوقی</h1>
-									<p class="about-website">از جمله: امور خانواده، امور ثبتی، امور حقوقی، امور کیفری و ...</p>
-									<a class="btn-1 move-section" href="#">درباره ما</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		 
-		</div>
-	</header>
 
-	<!-- :: Features -->
-	<section class="features">
-		<div class="container">
-			<div class="features-box">
-				<div class="features-item">
-					<i class="flaticon-detective"></i>
-					<div class="item-text">
-						<span>موسسه حقوقی صور آخر</span>
-						<h4>دارای وکلای خبره</h4>
-						<p>وکلای با تجربه و خبره در موسسه صور آخر</p>
-					</div>
-				</div>
-				<div class="features-item">
-					<i class="flaticon-oath"></i>
-					<div class="item-text">
-						<span>کمترین تعداد</span>
-						<h4>پرونده شکست خوردهه</h4>
-						<p>کمترین تعداد پرونده شکست خورده در سال</p>
-					</div>
-				</div>
-				<div class="features-item">
-					<i class="flaticon-libra"></i>
-					<div class="item-text">
-						<span>دارای عملکرد بالا</span>
-						<h4>در کلیه دادگاه ها</h4>
-						<p>درای عملکرد و موفقیت بالا در کلیه زمینه ها</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="about py-100" id="about-us">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="img-box">
-						<div class="about-img">
-							<img class="img-fluid" src="/assets/images/about/01_about.jpg" alt="01 About">
-						</div>
-						<div class="case-about">
-							<i class="flaticon-law-book"></i>
-							<div class="counter">1930</div>
-							<h5>پرونده موفق</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="text-box">
-						<div class="sec-title">
-							<h2>درباره ما</h2>
-							<h3>امور حقوقی خود را با خیالی آسوده برون سپاری کنید</h3>
-							<p>تجربه بالا، دانش به روز، آموزش مداول و قدرت تصمیم گیری باعث شده است تا وکلای موسسه حقوقی صور آخر بهترین عملکرد را در سال های اخیر داشته باشند</p>
-						</div>
-						<ul class="core-about">
-							<li>
-								<i class="fas fa-check"></i>
-								<h4>ارائه راه حل های عملی</h4>
-							</li>
-							<li>
-								<i class="fas fa-check"></i>
-								<h4>صرفه جویی در وقت موکل</h4>
-							</li>
-							<li>
-								<i class="fas fa-check"></i>
-								<h4>تسلط بالا بر روی قوانین</h4>
-							</li>
-							<li>
-								<i class="fas fa-check"></i>
-								<h4>تجربه خوشایند موکلان</h4>
-							</li>
-						</ul>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="p-about">همه موارد بالا دلایلی هستند که با افتخار توانسته ایم رضایت موکلان خود را جلب نماییم</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="p-about">مهمترین هدف ما جلب رضایت موکلین و کسب بهترین نتیجه برای موکلین می باشد.</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<a class="btn-1" href="#">اطلاعات بیشتر</a>
-							</div>
-							<div class="col-sm-6 d-flex align-items-center">
-								@*<img class="img-fluid sign-about" src="/assets/images/sign.png" alt="Sign About">*@
+<header class="header" id="page">
+	<div class="header-owl owl-carousel owl-theme">
+		<div class="sec-hero display-table" style="background-image: url(/assets/images/header/01_header.jpg)">
+			<div class="table-cell">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row slide-item">
+						<div class="col-lg-6">
+							<div class="banner">
+								<div class="headline-top">پذیرش وکالت و شکواییه</div>
+								<h1 class="handline">مشاوره حقوقی</h1>
+								<p class="about-website">موسسه حقوقی کاخ عدالت با کادری مجرب آماده ارائه خدمات حقوقی به مشتریان گرامی می باشد</p>
+								<a class="btn-1 btn-2 move-section" href="/about">اطلاعات بیشتر</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="practice-area py-100-70">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="sec-title text-center">
-						<h3>خدمات حقوقی صور آخر</h3>
-						<p>در این بخش تعدادی از خدمات اصلی موسسه حقوقی صور آخر را ملاحضه می فرمایید. کلیه خدمات این مجموعه از طریق منو وب سایت در دسترس می باشد.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4">
-					<div class="practice-area-item">
-						<i class="flaticon-act"></i>
-						<div class="content">
-							<h4>امور کسب و کارها</h4>
-							<p>مشاوره در زمینه کلیه امور حقوقی کسب و کارها </p>
-							<a href="#">اطلاعات بیشتر</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="practice-area-item">
-						<i class="flaticon-lawyer-1"></i>
-						<div class="content">
-							<h4>خانواده</h4>
-							<p>شامل کلیه امور مربوط به طلاق و مهریه و نفقه و حضانت</p>
-							<a href="#">اطلاعات بیشتر</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="practice-area-item">
-						<i class="flaticon-folder"></i>
-						<div class="content">
-							<h4>ملکی</h4>
-							<p>کلیه امور حقوقی ملکی شامل تخلیه، سرقفلی، مشکلات ملک های مشاع و ...</p>
-							<a href="#">اطلاعات بیشتر</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="practice-area-item">
-						<i class="flaticon-libra"></i>
-						<div class="content">
-							<h4>عقود قراردادها</h4>
-							<p>مشاور در زمینه عقود کلیه امور مربوط به عقد قراردادها</p>
-							<a href="#">اطلاعات بیشتر</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="practice-area-item">
-						<i class="flaticon-criminal"></i>
-						<div class="content">
-							<h4>امور کیفری</h4>
-							<p>وکالت کلیه امور کیفری نظیر سرقت، قتل، مواد مخدر، رابطه نامشروع و ضرب و جرح</p>
-							<a href="#">اطلاعات بیشتر</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="practice-area-item">
-						<i class="flaticon-jury"></i>
-						<div class="content">
-							<h4>امور مالی</h4>
-							<p>وکالت و مشاوره در زمینه کلیه امور مالی از جمله چک و سفته و ...</p>
-							<a href="#">اطلاعات بیشتر</a>
+		<div class="sec-hero display-table" style="background-image: url(/assets/images/header/03_header.jpg)">
+			<div class="table-cell">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row slide-item">
+						<div class="col-lg-6">
+							<div class="banner">
+								<div class="headline-top">گروه ولاکی کاخ عدالت</div>
+								<h1 class="handline">قبول وکلات در تمام زمینه های حقوقی</h1>
+								<p class="about-website">از جمله: امور خانواده، امور ثبتی، امور حقوقی، امور کیفری و ...</p>
+								<a class="btn-1 move-section" href="/about">درباره ما</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<section class="history">
-		<div class="bg-section">
-			<div class="overlay"></div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="sec-title text-center">
-						<h3>ثبت پرسش های حقوقی</h3>
-						<p>می توانید با ثبت سوالات حقوقی خود، از وکلای موسسه حقوقی صور آخر، به صورت رایگان کمک بگیرید						</p>
-					</div>
-				</div>
-			</div>
-	 
-	 
 		</div>
 
-		<!-- :: Quote -->
-		<div class="quote">
-			<div class="container">
-				<div class="box">
+	</div>
+</header>
+
+<!-- :: Features -->
+<section class="features">
+	<div class="container">
+		<div class="features-box">
+			<div class="features-item">
+				<i class="flaticon-detective"></i>
+				<div class="item-text">
+					<span>موسسه حقوقی کاخ عدالت</span>
+					<h4>دارای وکلای خبره</h4>
+					<p>وکلای با تجربه و خبره در موسسه کاخ عدالت</p>
+				</div>
+			</div>
+			<div class="features-item">
+				<i class="flaticon-oath"></i>
+				<div class="item-text">
+					<span>شانس پیروزی بالا</span>
+					<h4>در تمامی پرونده ها</h4>
+					<p>در پروندهای پیچیده هم شانس بالایی داشته باشید</p>
+				</div>
+			</div>
+			<div class="features-item">
+				<i class="flaticon-libra"></i>
+				<div class="item-text">
+					<span>دارای عملکرد بالا</span>
+					<h4>در کلیه دادگاه ها</h4>
+					<p>درای عملکرد و موفقیت بالا در کلیه زمینه ها</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="about py-100" id="about-us">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="img-box">
+					<div class="about-img">
+						<img class="img-fluid" src="/assets/images/about/01_about.jpg" alt="01 About">
+					</div>
+					<div class="case-about">
+						<i class="flaticon-law-book"></i>
+						<div class="counter">1930</div>
+						<h5>پرونده موفق</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="text-box">
+					<div class="sec-title">
+						<h2>درباره ما</h2>
+						<h3>امور حقوقی خود را با خیالی آسوده برون سپاری کنید</h3>
+						<p>تجربه بالا، دانش به روز، آموزش مداول و قدرت تصمیم گیری باعث شده است تا وکلای موسسه حقوقی کاخ عدالت بهترین عملکرد را در سال های اخیر داشته باشند</p>
+					</div>
+					<ul class="core-about">
+						<li>
+							<i class="fas fa-check"></i>
+							<h4>ارائه راه حل های عملی</h4>
+						</li>
+						<li>
+							<i class="fas fa-check"></i>
+							<h4>صرفه جویی در وقت موکل</h4>
+						</li>
+						<li>
+							<i class="fas fa-check"></i>
+							<h4>تسلط بالا بر روی قوانین</h4>
+						</li>
+						<li>
+							<i class="fas fa-check"></i>
+							<h4>تجربه خوشایند موکلان</h4>
+						</li>
+					</ul>
 					<div class="row">
-						<div class="col-lg-4">
-							<div class="img-box">
-								<div class="quote-img">
-									<img class="img-fluid" src="/assets/images/quote/01_quote.jpg" alt="01 Quote">
-								</div>
-								<div class="quote-info">
-									<i class="flaticon-call"></i>
-									<h4>02122839284</h4>
-								</div>
-							</div>
+						<div class="col-sm-6">
+							<p class="p-about">همه موارد بالا دلایلی هستند که با افتخار توانسته ایم رضایت موکلان خود را جلب نماییم</p>
 						</div>
-						<div class="col-lg-8">
-							<div class="quote-box">
-								<div class="sec-title">
-									<h3>مشاوره حقوقی</h3>
-									<p>می توانید با ثبت سوالات حقوقی خود، از وکلای موسسه حقوقی صور آخر، به صورت رایگان کمک بگیرید						</p>						</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="quote-item">
-											<input type="text" name="name" placeholder="نام">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="quote-item">
-											<input type="email" name="email" placeholder="ایمیل">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="quote-item">
-											<input type="text" name="subject" placeholder="موضوع سوال">
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="quote-item">
-											<input type="text" name="cell" placeholder="شماره موبایل">
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="quote-item">
-											<div class="quote-item">
-												<textarea placeholder="سوال شما"></textarea>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="quote-item">
-
-											<a class="btn-1" href="#">ارسال سوال</a>
-										</div>
-									</div>
-								</div>
-							</div>
+						<div class="col-sm-6">
+							<p class="p-about">مهمترین هدف ما جلب رضایت موکلین و کسب بهترین نتیجه برای موکلین می باشد.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<a class="btn-1" href="/about">اطلاعات بیشتر</a>
+						</div>
+						<div class="col-sm-6 d-flex align-items-center">
+							@*<img class="img-fluid sign-about" src="/assets/images/sign.png" alt="Sign About">*@
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	 
-	<section class="advisors py-100-70">
+	</div>
+</section>
+
+<section class="practice-area py-100-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="sec-title text-center">
+					<h3>خدمات حقوقی کاخ عدالت</h3>
+					<p>در این بخش تعدادی از خدمات اصلی موسسه حقوقی کاخ عدالت را ملاحضه می فرمایید. کلیه خدمات این مجموعه از طریق منو وب سایت در دسترس می باشد.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-lg-4">
+				<div class="practice-area-item">
+					<i class="flaticon-act"></i>
+					<div class="content">
+						<h4>امور مروبط به طلاق</h4>
+						<p>مشاوره در زمینه طلاق از طرف زوج و زوجه </p>
+						<a href="/service/طلاق">اطلاعات بیشتر</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="practice-area-item">
+					<i class="flaticon-lawyer-1"></i>
+					<div class="content">
+						<h4>خانواده</h4>
+						<p>شامل کلیه امور مربوط به طلاق و مهریه و نفقه و حضانت</p>
+						<a href="/service/familry">اطلاعات بیشتر</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="practice-area-item">
+					<i class="flaticon-folder"></i>
+					<div class="content">
+						<h4>ملکی</h4>
+						<p>کلیه امور حقوقی ملکی شامل تخلیه، سرقفلی، مشکلات ملک های مشاع و ...</p>
+						<a href="/service/ملکی-حقوقی">اطلاعات بیشتر</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="practice-area-item">
+					<i class="flaticon-libra"></i>
+					<div class="content">
+						<h4>عقود قراردادها</h4>
+						<p>مشاور در زمینه عقود کلیه امور مربوط به عقد قراردادها</p>
+						<a href="/service/عقد-قرارداد">اطلاعات بیشتر</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="practice-area-item">
+					<i class="flaticon-criminal"></i>
+					<div class="content">
+						<h4>امور کیفری</h4>
+						<p>وکالت کلیه امور کیفری نظیر سرقت، قتل، مواد مخدر، رابطه نامشروع و ضرب و جرح</p>
+						<a href="/service/کیفری">اطلاعات بیشتر</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="practice-area-item">
+					<i class="flaticon-jury"></i>
+					<div class="content">
+						<h4>امور مالی</h4>
+						<p>وکالت و مشاوره در زمینه کلیه امور مالی از جمله چک و سفته و ...</p>
+						<a href="/service/finance">اطلاعات بیشتر</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="history">
+	<div class="bg-section">
+		<div class="overlay"></div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="sec-title text-center">
+					<h3>ثبت پرسش های حقوقی</h3>
+					<p>می توانید با ثبت سوالات حقوقی خود، از وکلای موسسه حقوقی کاخ عدالت، به صورت رایگان کمک بگیرید						</p>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<!-- :: Quote -->
+	<div class="quote">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="sec-title text-center">
-						<h3>وکلای موسسه حقوقی صور آخر</h3>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4">
-					<div class="advisors-box">
+			<div class="box">
+				<div class="row">
+					<div class="col-lg-4">
 						<div class="img-box">
-							<img class="img-fluid" src="/assets/images/advisors/01_advisors.jpg" alt="01 advisors">
-							<div class="img-box-hover">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-								</ul>
+							<div class="quote-img">
+								<img class="img-fluid" src="/assets/images/quote/01_quote.jpg" alt="01 Quote">
+							</div>
+							<div class="quote-info">
+								<i class="flaticon-call"></i>
+								<h4>22803033</h4>
 							</div>
 						</div>
-						<div class="text-box text-center">
-							<h5>Anwar Ramadan</h5>
-							<span>Civil Lawyer</span>
-						</div>
 					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="advisors-box">
-						<div class="img-box">
-							<img class="img-fluid" src="/assets/images/advisors/02_advisors.jpg" alt="02 advisors">
-							<div class="img-box-hover">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-								</ul>
+					<div class="col-lg-8">
+						<div class="quote-box">
+							<div class="sec-title">
+								<h3>مشاوره حقوقی</h3>
+								<p>می توانید با ثبت سوالات حقوقی خود، از وکلای موسسه حقوقی کاخ عدالت، به صورت رایگان کمک بگیرید						</p>
 							</div>
-						</div>
-						<div class="text-box text-center">
-							<h5>Osama Bakri</h5>
-							<span>Business Lawyer</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="advisors-box">
-						<div class="img-box">
-							<img class="img-fluid" src="/assets/images/advisors/03_advisors.jpg" alt="03 advisors">
-							<div class="img-box-hover">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-								</ul>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="quote-item">
+										<input type="text" id="name" placeholder="نام">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="quote-item">
+										<input type="email" id="email" placeholder="ایمیل">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="quote-item">
+										<input type="text" id="subject" placeholder="موضوع سوال">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="quote-item">
+										<input type="text" id="cell" placeholder="شماره موبایل">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="quote-item">
+										<div class="quote-item">
+											<textarea id="message" placeholder="سوال شما"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="quote-item">
+
+										<button onclick="submitAppointment();" class="btn-1">ارسال سوال</button>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div id="SuccessDiv" class="alert alert-success">پیام شما با موفقیت ثبت شد و در اسرع وقت به آن رسیدگی می گردد.</div>
+									<div id="errorDiv" class="alert alert-danger"></div>
+								</div>
 							</div>
-						</div>
-						<div class="text-box text-center">
-							<h5>Sana El-Shamy</h5>
-							<span>Criminal Defence</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
+
+
 
 <section class="contact py-100">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 offset-md-1">
-					<div class="sec-title text-center">
-						<h3>آیا در جستجوی مشاوره حقوقی هستید؟</h3>
-						<p>موسسه حقوقی صور آخر ارائه دهنده خدمات مشاوره آنلاین، تلفنی و حضوری در کلیه امور حقوقی</p>
-						<a class="btn-1 btn-3" href="#">ثبت درخواست مشاوره</a>
-					</div>
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class="sec-title text-center">
+					<h3>آیا در جستجوی مشاوره حقوقی هستید؟</h3>
+					<p>موسسه حقوقی کاخ عدالت ارائه دهنده خدمات مشاوره آنلاین، تلفنی و حضوری در کلیه امور حقوقی</p>
+					<a class="btn-1 btn-3" href="#">ثبت درخواست مشاوره</a>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<section class="bolg py-100-70">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="sec-title text-center">
-						<h3>مقالات</h3>
-						<p>در بخش مقالات وب سایت صور آخر از جدیدترین مقالات و موضوعات حقوقی با خبر شوید</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4">
-					<div class="blog-item">
-						<div class="img-box">
-							<a href="02_blog.html" class="open-post">
-								<img class="img-fluid" src="/assets/images/blog/01_blog.jpg" alt="01 Blog">
-							</a>
-					 
-						</div>
-						<div class="text-box">
-							<span class="blog-date">1 اسفند 1398</span>
-							<a href="02_blog.html" class="title-blog">
-								<h5>نحوه اجرای احکام دیوان عدالت اداری چگونه است؟
-								</h5>
-							</a>
-							<p> طبق ماده 107 قانون عدالت اداری، کلیه اشخاص و مراجع طرف شکایت در دیوان عدالت اداری مکلف اند آراء دیوان را پس از اینکه ابلاغ شدند، فورا اجرا نمایند. </p>
-							<a href="02_blog.html" class="link">ادامه مطلب</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-4">
-					<div class="blog-item">
-						<div class="img-box">
-							<a href="02_blog.html" class="open-post">
-								<img class="img-fluid" src="/assets/images/blog/02_blog.jpg" alt="01 Blog">
-							</a>
-
-						</div>
-						<div class="text-box">
-							<span class="blog-date">1 اسفند 1398</span>
-							<a href="02_blog.html" class="title-blog">
-								<h5>
-									چگونه از شهرداری شکایت کنیم؟
-								</h5>
-							</a>
-							<p>شهرداری ها یکی از نهاد های دولتی هستند که به منظور شکایت از آنها درخواست های زیادی از جانب مردم مطرح می شود.  به همین دلایل قانونگذار راه های مختلفی را برای شکایت از شهرداری ها و نهاد های دولتی پیش بینی کرده است. </p>
-							<a href="02_blog.html" class="link">ادامه مطلب</a>
-						</div>
-					</div>
-				</div>
-				
-
-				<div class="col-md-6 col-lg-4">
-					<div class="blog-item">
-						<div class="img-box">
-							<a href="02_blog.html" class="open-post">
-								<img class="img-fluid" src="/assets/images/blog/03_blog.jpg" alt="01 Blog">
-							</a>
-
-						</div>
-						<div class="text-box">
-							<span class="blog-date">1 اسفند 1398</span>
-							<a href="02_blog.html" class="title-blog">
-								<h5>
-									اثبات خیانت همسر
-								</h5>
-							</a>
-							<p> آغاز و با طلاق یا فوت یکی از زوجین پایان می یابد؛ ولی برخلاف قوانین جاریه و شرع مقدس که روابط پیش از ازدواج را قانونی و مشروع نمی داند،  </p>
-							<a href="02_blog.html" class="link">ادامه مطلب</a>
-						</div>
-					</div>
+<section class="bolg py-100-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 ">
+				<div class="sec-title text-center">
+					<h3>مقالات</h3>
+					<p>در بخش مقالات وب سایت کاخ عدالت از جدیدترین مقالات و موضوعات حقوقی با خبر شوید</p>
 				</div>
 			</div>
 		</div>
-	</section>
+		<div class="row">
+			@foreach (var homeBlog in Model.HomeBlogs)
+			{
+					<div class="col-md-6 col-lg-4">
+						<div class="blog-item">
+							<div class="img-box">
+								<a href="/blog/@homeBlog.UrlParam" class="open-post">
+									<img class="img-fluid" src="@homeBlog.ImageUrl" alt="@homeBlog.Title">
+								</a>
+
+							</div>
+							<div class="text-box">
+								<span class="blog-date">@homeBlog.CreationDateStr</span>
+								<a href="/blog/@homeBlog.UrlParam" class="title-blog">
+									<h5>
+										@homeBlog.Title
+								</h5>
+							</a>
+							<p>@homeBlog.Summery </p>
+							<a href="/blog/@homeBlog.UrlParam" class="link">ادامه مطلب</a>
+						</div>
+					</div>
+				</div>
+			}
+
+		</div>
+	</div>
+</section>
 
 
 
-	

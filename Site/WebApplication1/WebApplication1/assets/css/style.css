@@ -602,13 +602,13 @@ header.navs.active{
     border-bottom: 0;
 }*/
 .nav-bar .info-nav i{
-    float: left;
+    float: right;
     font-size: 30px;
     color: #F1F1F1;
     line-height: 1.3;
 }
 .nav-bar .info-nav .contact-nav{
-    padding-left: 45px;
+    padding-right: 45px;
 }
 .nav-bar .info-nav .contact-nav p{
     color: #F1F1F1;
@@ -629,7 +629,7 @@ header.navs.active{
 .nav-bar.active .info-nav i{
     color: #C89D66
 }
-.nav-bar.active .info-nav .contact-nav p,
+.nav-bar.active .info-nav .contact-nav p,.nav-bar.active .info-nav .contact-nav a,
 .nav-bar.active .info-nav .contact-nav span{
     color: #262B3E
 }
@@ -2316,6 +2316,7 @@ header.navs.active{
 /* :: Blog */
 .blog-item{
     margin-bottom: 30px;
+    border: 1px solid #ddd;
 }
 .blog-item .img-box{
     position: relative;
@@ -2350,7 +2351,11 @@ header.navs.active{
     color: #262B3E;
 }
 .blog-item .text-box{
-    padding: 30px 0px 0px 30px;
+    padding: 20px 15px;
+    height: 285px;
+}
+.blog-item .text-box p{
+    min-height: 126px;
 }
 .blog-item .text-box .title-blog{
     display: block;
@@ -2362,6 +2367,10 @@ header.navs.active{
     margin: 15px 0;
     font-weight: 600;
     color: #262B3E;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .blog-item .text-box .title-blog:hover,
 .blog-item .text-box h5:hover{

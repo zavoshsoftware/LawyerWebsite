@@ -25,3 +25,48 @@ footer p {
     text-align: justify;
 }
 
+.single-practice-areas-box p {
+    line-height: 32px;
+    color: #6b7074;
+    text-align: justify;
+    font-size: 1.03rem;
+
+}
+.single-practice-areas-box h2 {
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000;
+    text-align: justify;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.single-practice-areas-box h3 {
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: justify;
+}
+.single-practice-areas-box h4 {
+    line-height: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: justify;
+}
+.single-practice-areas-box ul {
+    list-style: circle;
+    color: #404548;
+}
+.single-practice-areas-box ol {
+    color: #404548;
+}
+
+#errorDiv, #SuccessDiv {
+    display: none;
+}

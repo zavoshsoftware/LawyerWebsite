@@ -10,6 +10,7 @@ using Models;
 
 namespace MastaneClinic.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class BlogCommentsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

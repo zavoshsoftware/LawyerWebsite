@@ -11,113 +11,118 @@ using Models;
 namespace WebApplication1.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    public class ContactUsFormsController : Controller
-    { 
+    public class UsersController : Controller
+    {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: ContactUsForms
+        // GET: Users
         public ActionResult Index()
         {
-            return View(db.ContactUsForms.Where(a=>a.IsDeleted==false).OrderByDescending(a=>a.CreationDate).ToList());
+            var users = db.Users.Include(u => u.Role).Where(u=>u.IsDeleted==false).OrderByDescending(u=>u.CreationDate);
+            return View(users.ToList());
         }
 
-        // GET: ContactUsForms/Details/5
+        // GET: Users/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ContactUsForm contactUsForm = db.ContactUsForms.Find(id);
-            if (contactUsForm == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(contactUsForm);
+            return View(user);
         }
 
-        // GET: ContactUsForms/Create
+        // GET: Users/Create
         public ActionResult Create()
         {
+            ViewBag.RoleId = new SelectList(db.Roles, "Id", "Title");
             return View();
         }
 
-        // POST: ContactUsForms/Create
+        // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Email,Message,Ip,IsActive,CreationDate,LastModifiedDate,IsDeleted,DeletionDate,Description")] ContactUsForm contactUsForm)
+        public ActionResult Create([Bind(Include = "Id,Password,CellNum,FullName,Code,AvatarImageUrl,Email,RoleId,IsActive,CreationDate,LastModifiedDate,IsDeleted,DeletionDate,Description")] User user)
         {
             if (ModelState.IsValid)
             {
-				contactUsForm.IsDeleted=false;
-				contactUsForm.CreationDate= DateTime.Now; 
-                contactUsForm.Id = Guid.NewGuid();
-                db.ContactUsForms.Add(contactUsForm);
+				user.IsDeleted=false;
+				user.CreationDate= DateTime.Now; 
+                user.Id = Guid.NewGuid();
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(contactUsForm);
+            ViewBag.RoleId = new SelectList(db.Roles, "Id", "Title", user.RoleId);
+            return View(user);
         }
 
-        // GET: ContactUsForms/Edit/5
+        // GET: Users/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ContactUsForm contactUsForm = db.ContactUsForms.Find(id);
-            if (contactUsForm == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(contactUsForm);
+            ViewBag.RoleId = new SelectList(db.Roles, "Id", "Title", user.RoleId);
+            return View(user);
         }
 
-        // POST: ContactUsForms/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Email,Message,Ip,IsActive,CreationDate,LastModifiedDate,IsDeleted,DeletionDate,Description")] ContactUsForm contactUsForm)
+        public ActionResult Edit([Bind(Include = "Id,Password,CellNum,FullName,Code,AvatarImageUrl,Email,RoleId,IsActive,CreationDate,LastModifiedDate,IsDeleted,DeletionDate,Description")] User user)
         {
             if (ModelState.IsValid)
             {
-				contactUsForm.IsDeleted = false;
-				contactUsForm.LastModifiedDate = DateTime.Now;
-                db.Entry(contactUsForm).State = EntityState.Modified;
+				user.IsDeleted = false;
+				user.LastModifiedDate = DateTime.Now;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(contactUsForm);
+            ViewBag.RoleId = new SelectList(db.Roles, "Id", "Title", user.RoleId);
+            return View(user);
         }
 
-        // GET: ContactUsForms/Delete/5
+        // GET: Users/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ContactUsForm contactUsForm = db.ContactUsForms.Find(id);
-            if (contactUsForm == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(contactUsForm);
+            return View(user);
         }
 
-        // POST: ContactUsForms/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            ContactUsForm contactUsForm = db.ContactUsForms.Find(id);
-			contactUsForm.IsDeleted=true;
-			contactUsForm.DeletionDate=DateTime.Now;
+            User user = db.Users.Find(id);
+			user.IsDeleted=true;
+			user.DeletionDate=DateTime.Now;
  
             db.SaveChanges();
             return RedirectToAction("Index");

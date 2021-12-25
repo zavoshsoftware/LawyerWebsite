@@ -11,6 +11,7 @@ using Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ExpertsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

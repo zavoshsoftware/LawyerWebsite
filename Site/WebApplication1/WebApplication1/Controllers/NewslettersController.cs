@@ -10,6 +10,7 @@ using Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class NewslettersController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

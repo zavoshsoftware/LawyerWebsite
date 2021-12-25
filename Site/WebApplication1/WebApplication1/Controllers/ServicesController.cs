@@ -12,6 +12,7 @@ using ViewModels;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ServicesController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
@@ -24,6 +25,7 @@ namespace WebApplication1.Controllers
         }
 
         [Route("service/{urlParam}")]
+        [AllowAnonymous]
         public ActionResult Details(string urlParam)
         {
 

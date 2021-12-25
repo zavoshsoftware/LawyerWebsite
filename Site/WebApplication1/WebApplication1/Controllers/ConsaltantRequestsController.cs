@@ -10,6 +10,7 @@ using Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ConsaltantRequestsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
@@ -130,5 +131,34 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [AllowAnonymous]
+        public ActionResult SubmitRequest(string fullName, string subject, string cellNumber, string email, string message)
+        {
+            try
+            {
+                ConsaltantRequest request = new ConsaltantRequest()
+                {
+                    CreationDate = DateTime.Now,
+                    IsDeleted = false,
+                    Id = Guid.NewGuid(),
+                    CellNumber = cellNumber,
+                    IsActive = false,
+                    Body = message,
+                    FullName = fullName,
+                    Email = email,
+                    Subject = subject
+                };
+
+                db.ConsaltantRequests.Add(request);
+                db.SaveChanges();
+                return Json("true", JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json("false", JsonRequestBehavior.AllowGet);
+            }
+        }
+
     }
 }

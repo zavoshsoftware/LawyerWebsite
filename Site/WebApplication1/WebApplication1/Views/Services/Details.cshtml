@@ -1,9 +1,9 @@
 ﻿@model ViewModels.ServiceDetailViewModel
 
 @{
-    ViewBag.Title = "Details";
-	Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
-
+		ViewBag.Title = Model.Service.Title + " | موسسه حقوقی کاخ عدالت";
+		Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+		ViewBag.Canonical = "https://kakheedalat.com/service/"+ @Model.Service.UrlParam;
 }
  
 
@@ -28,18 +28,25 @@
 <!-- :: Single Practice Areas -->
 <section class="single-practice-areas py-100-70">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-4">
+		<div class="row  ">
+			<div class="col-lg-8 order-md-3  ">
+				<div class="single-practice-areas-box">
+			
+					@Html.Raw(Model.Service.Body)
+				 
+				</div>
+			</div>
+			<div class="col-lg-4 order-md-2 ">
 				<div class="single-practice-areas-head">
 					<h4>خدمات مرتبط</h4>
 				</div>
 				<ul class="single-practice-areas-list">
 					@foreach (var service in Model.SidebarServices)
 					{
-					 
+
 						<li><a href="/service/@service.UrlParam">@service.Title<i class="fas fa-angle-left"></i></a></li>
 					}
-			 
+
 				</ul>
 				<div class="brochures">
 					<h5>درخواست مشاوره</h5>
@@ -49,41 +56,12 @@
 				<div class="call-back">
 					<i class="flaticon-call"></i>
 					<h5>تلفن های تمای</h5>
-					<p>+(98) 02122343242</p>
-					<p>+(98) 02122343242</p>
+					<p>02122343242</p>
+					<p>02122343242</p>
 					<a href="#" class="btn-1 btn-3">مشاوره تلفن</a>
 				</div>
 			</div>
-			<div class="col-lg-8">
-				<div class="single-practice-areas-box">
-					<h2>@Model.Service.Title</h2>
-					@Html.Raw(Model.Service.Body)
-					<h4>مقالات و مطالب مرتبط</h4>
-					<div class="row">
-						@foreach (var blog in Model.RelatedBlog)
-						{
-							<div class="col-md-6 col-lg-6">
-								<div class="blog-item">
-									<div class="img-box">
-										<a href="02_blog.html" class="open-post">
-											<img class="img-fluid" src="@blog.ImageUrl" alt="@blog.Title">
-										</a>
-							 
-									</div>
-									<div class="text-box">
-										<span class="blog-date">@blog.CreationDateStr</span>
-										<a href="02_blog.html" class="title-blog">
-											<h5>@blog.Title</h5>
-										</a>
-										<p>@blog.Summery</p>
-										<a href="/blog/@blog.UrlParam" class="link">ادامه مطلب</a>
-									</div>
-								</div>
-							</div>
-						}
-					</div>
-				</div>
-			</div>
+
 		</div>
 		
 		
@@ -98,7 +76,7 @@
 							<div class="col-md-4 col-lg-4">
 								<div class="blog-item">
 									<div class="img-box">
-										<a href="02_blog.html" class="open-post">
+										<a href="/blog/@blog.UrlParam" class="open-post">
 											<img class="img-fluid" src="@blog.ImageUrl" alt="@blog.Title">
 										</a>
 							 

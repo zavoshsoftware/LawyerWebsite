@@ -12,6 +12,7 @@ using ViewModels;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class BlogsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

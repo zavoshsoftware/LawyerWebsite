@@ -1,0 +1,78 @@
+﻿@model ViewModels.ConsultantViewModel
+@{
+    ViewBag.Title = "مشاوره حقوقی";
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+<section class="breadcrumb-header" id="page" style="background-image: url(/assets/images/header/07_header.jpg)">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="banner">
+					<h1>مشاوره حقوقی</h1>
+					<ul>
+						<li><a href="/">خانه</a></li>
+						<li><i class="fas fa-angle-right"></i></li>
+						<li>مشاوره حقوقی</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bolg py-100">
+	<div class="container">
+	 
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="quote-box">
+					<div class="sec-title">
+						<h3>مشاوره حقوقی</h3>
+						<p>می توانید با ثبت سوالات حقوقی خود، از وکلای موسسه حقوقی کاخ عدالت، به صورت رایگان کمک بگیرید						</p>						</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="quote-item">
+								<input type="text" id="name" placeholder="نام">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="quote-item">
+								<input type="email" id="email" placeholder="ایمیل">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="quote-item">
+								<input type="text" id="subject" placeholder="موضوع سوال">
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="quote-item">
+								<input type="text" id="cell" placeholder="شماره موبایل">
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="quote-item">
+								<div class="quote-item">
+									<textarea id="message" placeholder="سوال شما"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="quote-item">
+
+								<button onclick="submitAppointment();" class="btn-1">ارسال سوال</button>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div id="SuccessDiv" class="alert alert-success">پیام شما با موفقیت ثبت شد و در اسرع وقت به آن رسیدگی می گردد.</div>
+							<div id="errorDiv" class="alert alert-danger"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
