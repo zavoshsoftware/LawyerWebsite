@@ -1,0 +1,115 @@
+﻿@model Models.Slide
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Slide</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeadTitle1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeadTitle1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeadTitle2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeadTitle2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Headtext)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Headtext)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BtnLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BtnLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BtnText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BtnText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

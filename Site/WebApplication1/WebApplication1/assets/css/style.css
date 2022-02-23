@@ -2352,7 +2352,7 @@ header.navs.active{
 }
 .blog-item .text-box{
     padding: 20px 15px;
-    height: 285px;
+    height: auto;
 }
 .blog-item .text-box p{
     min-height: 126px;

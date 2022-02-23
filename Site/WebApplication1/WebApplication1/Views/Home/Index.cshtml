@@ -7,43 +7,28 @@
 
 
 <header class="header" id="page">
-	<div class="header-owl owl-carousel owl-theme">
-		<div class="sec-hero display-table" style="background-image: url(/assets/images/header/01_header.jpg)">
-			<div class="table-cell">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row slide-item">
-						<div class="col-lg-6">
-							<div class="banner">
-								<div class="headline-top">پذیرش وکالت و شکواییه</div>
-								<h1 class="handline">مشاوره حقوقی</h1>
-								<p class="about-website">موسسه حقوقی کاخ عدالت با کادری مجرب آماده ارائه خدمات حقوقی به مشتریان گرامی می باشد</p>
-								<a class="btn-1 btn-2 move-section" href="/about">اطلاعات بیشتر</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="sec-hero display-table" style="background-image: url(/assets/images/header/03_header.jpg)">
-			<div class="table-cell">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row slide-item">
-						<div class="col-lg-6">
-							<div class="banner">
-								<div class="headline-top">گروه ولاکی کاخ عدالت</div>
-								<h1 class="handline">قبول وکلات در تمام زمینه های حقوقی</h1>
-								<p class="about-website">از جمله: امور خانواده، امور ثبتی، امور حقوقی، امور کیفری و ...</p>
-								<a class="btn-1 move-section" href="/about">درباره ما</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
+    <div class="header-owl owl-carousel owl-theme">
+        @foreach (var slide in Model.Slides)
+        {
+            <div class="sec-hero display-table" style="background-image: url(@slide.ImgUrl)">
+                <div class="table-cell">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row slide-item">
+                            <div class="col-lg-6">
+                                <div class="banner">
+                                    <div class="headline-top">@slide.HeadTitle1</div>
+                                    <h1 class="handline">@slide.HeadTitle2</h1>
+                                    <p class="about-website">@slide.Headtext</p>
+                                    <a class="btn-1 btn-2 move-section" href="@slide.BtnLink">@slide.BtnText</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </header>
 
 <!-- :: Features -->

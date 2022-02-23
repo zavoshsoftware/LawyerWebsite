@@ -1,0 +1,179 @@
+﻿@model ViewModels.AboutViewModel
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+
+<!-- :: Breadcrumb Header -->
+<section class="breadcrumb-header" id="page" style="background-image: url(assets/images/header/06_header.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="banner">
+                    <h1>درباره ما</h1>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><i class="fas fa-angle-right"></i></li>
+                        <li>درباره ما</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- :: About -->
+<section class="about py-100" id="about-us">
+    <div class="container">
+        @Model.TextItems.Where(x=>x.Title=="AboutUs").FirstOrDefault()
+    </div>
+</section>
+
+<!-- :: Provide -->
+<section class="provide">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-box">
+                    <div class="sec-title">
+                        <h2>Why Choose Us</h2>
+                        <h3>We are top lawyers with 40 years os experience</h3>
+                        <p>Decision Are A Professional Attorney &amp; Lawyers Services Provider Institutions. Suitable For Law Firm, Injury Law, Traffic Ticket Attorney, Legacy And More.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="content-item">
+                            <i class="flaticon-books"></i>
+                            <div class="box">
+                                <h4>Our Success Cases</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <i class="flaticon-lawyer"></i>
+                            <div class="box">
+                                <h4>Professional Attorneys</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <i class="flaticon-portfolio"></i>
+                            <div class="box">
+                                <h4>Long Experience</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="img-box">
+                    <div class="img-provide"></div>
+                    <div class="statistic-owl owl-carousel owl-theme">
+                        <div class="statistic-item">
+                            <i class="flaticon-lawyer"></i>
+                            <div class="content-box">
+                                <span class="counter">950</span>
+                                <div class="name-content">Trusted Clients</div>
+                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                        <div class="statistic-item">
+                            <i class="flaticon-gavel"></i>
+                            <div class="content-box">
+                                <span class="counter">908</span>
+                                <div class="name-content">Solved Cases</div>
+                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="presentation-box">
+        <a href="https://youtu.be/TKnufs85hXk" class="pulse" data-lity>
+            <i class="fas fa-play"></i>
+        </a>
+    </div>
+</section>
+
+
+<!-- :: Practice Area -->
+<section class="practice-area py-100-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="sec-title text-center">
+                    <h2>Practice Area</h2>
+                    <h3>What We Cover</h3>
+                    <p>Decision Are A Professional Attorney &amp; Lawyers Services Provider Institutions. Suitable For Law Firm, Injury Law, Traffic Ticket Attorney, Legacy And More.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="practice-area-item">
+                    <i class="flaticon-act"></i>
+                    <div class="content">
+                        <h4>Business Law</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text typesetting.</p>
+                        <a href="01_practice-areas.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="practice-area-item">
+                    <i class="flaticon-lawyer-1"></i>
+                    <div class="content">
+                        <h4>Family Law</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text typesetting.</p>
+                        <a href="01_practice-areas.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="practice-area-item">
+                    <i class="flaticon-folder"></i>
+                    <div class="content">
+                        <h4>Real Estate Law</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text typesetting.</p>
+                        <a href="01_practice-areas.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="practice-area-item">
+                    <i class="flaticon-libra"></i>
+                    <div class="content">
+                        <h4>Juricial Law</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text typesetting.</p>
+                        <a href="01_practice-areas.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="practice-area-item">
+                    <i class="flaticon-criminal"></i>
+                    <div class="content">
+                        <h4>criminal Law</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text typesetting.</p>
+                        <a href="01_practice-areas.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="practice-area-item">
+                    <i class="flaticon-jury"></i>
+                    <div class="content">
+                        <h4>Personal Injury</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text typesetting.</p>
+                        <a href="01_practice-areas.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

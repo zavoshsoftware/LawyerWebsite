@@ -169,10 +169,8 @@ namespace WebApplication1.Controllers
         [Route("blog")]
         public ActionResult List()
         {
-            BlogListViewModel result = new BlogListViewModel()
-            {
-                Blogs = db.Blogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).ToList()
-            };
+            BlogListViewModel result = new BlogListViewModel();
+            result.Blogs = db.Blogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).ToList();            
             return View(result);
         }
 

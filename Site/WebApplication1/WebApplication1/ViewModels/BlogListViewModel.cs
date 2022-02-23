@@ -8,6 +8,10 @@ namespace ViewModels
 {
     public class BlogListViewModel : _BaseViewModel
     {
+        public BlogListViewModel()
+        {
+            Blogs = new List<Blog>();
+        }
         public List<Blog> Blogs { get; set; }
     }
 }

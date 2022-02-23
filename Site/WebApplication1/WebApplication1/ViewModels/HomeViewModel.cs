@@ -11,5 +11,6 @@ namespace ViewModels
         public List<Service> HomeServices { get; set; }
         public List<Expert> HomeExperts { get; set; }
         public List<Blog> HomeBlogs { get; set; }
+        public List<Slide> Slides { get; set; }
     }
 }

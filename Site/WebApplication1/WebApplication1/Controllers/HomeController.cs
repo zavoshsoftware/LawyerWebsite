@@ -15,16 +15,17 @@ namespace WebApplication1.Controllers
         [Route("")]
         public ActionResult Index()
         {
-            HomeViewModel result=new HomeViewModel()
+            HomeViewModel result = new HomeViewModel()
             {
-                HomeBlogs = db.Blogs.Where(c=>c.IsDeleted==false&&c.IsActive).OrderByDescending(c=>c.CreationDate).Take(3).ToList()
+                HomeBlogs = db.Blogs.Where(c => c.IsDeleted == false && c.IsActive).OrderByDescending(c => c.CreationDate).Take(3).ToList(),
+                Slides = db.Slides.Where(x => x.IsDeleted == false && x.IsActive).ToList()
             };
             return View(result);
         }
         [Route("consultant")]
         public ActionResult Consult()
         {
-            ConsultantViewModel result=new ConsultantViewModel()
+            ConsultantViewModel result = new ConsultantViewModel()
             {
             };
             return View(result);
@@ -32,10 +33,21 @@ namespace WebApplication1.Controllers
         [Route("contact")]
         public ActionResult Contact()
         {
-            ConsultantViewModel result=new ConsultantViewModel()
-            {
-            };
+            ConsultantViewModel result = new ConsultantViewModel();
             return View(result);
         }
+        [Route("about")]
+        public ActionResult About()
+        {
+            AboutViewModel model = new AboutViewModel();
+            model.section1 = new TextItem();
+            model.section2 = new TextItem();
+            model.section3 = new TextItem();
+            model.section1 = db.TextItems.FirstOrDefault(x => x.IsDeleted == false && x.IsActive && x.TextItemType.Name == "AboutUs" && x.Name == "section1");
+            model.section1 = db.TextItems.FirstOrDefault(x => x.IsDeleted == false && x.IsActive && x.TextItemType.Name == "AboutUs" && x.Name == "section2");
+            model.section1 = db.TextItems.FirstOrDefault(x => x.IsDeleted == false && x.IsActive && x.TextItemType.Name == "AboutUs" && x.Name == "section3");
+            return View(model);
+        }
+
     }
 }
