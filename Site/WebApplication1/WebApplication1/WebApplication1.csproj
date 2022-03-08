@@ -813,6 +813,8 @@
     <Compile Include="ViewModels\BlogListViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ServiceDetailViewModel.cs" />
+    <Compile Include="ViewModels\ServicesByCategoryViewModel.cs" />
+    <Compile Include="ViewModels\ServicesViewModel.cs" />
     <Compile Include="ViewModels\_BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1156,6 +1158,8 @@
     <Content Include="Views\TextItemTypes\Details.cshtml" />
     <Content Include="Views\TextItemTypes\Edit.cshtml" />
     <Content Include="Views\TextItemTypes\Index.cshtml" />
+    <Content Include="Views\Services\Services.cshtml" />
+    <Content Include="Views\Services\ServicesByCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -70,3 +70,7 @@ footer p {
 #errorDiv, #SuccessDiv {
     display: none;
 }
+.service-title{
+    text-align:end;
+    padding-block-end:1.5rem;
+}

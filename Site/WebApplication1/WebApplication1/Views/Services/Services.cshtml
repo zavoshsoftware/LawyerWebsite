@@ -1,0 +1,64 @@
+﻿@model ViewModels.ServicesViewModel
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
+}
+
+<section class="breadcrumb-header" id="page" style="background-image: url(assets/images/header/06_header.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="banner">
+                    <h1>خدمات</h1>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><i class="fas fa-angle-right"></i></li>
+                        <li>خدمات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="practice-area py-100-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="sec-title text-center">
+                    <h2>خدمات حقوقی موسسه کاخ عدالت منجی</h2>
+                    <h3>What We Cover</h3>
+                    <p>
+                        Decision Are A Professional Attorney &amp;
+                        Lawyers Services Provider Institutions. Suitable For Law Firm, Injury Law,
+                        Traffic Ticket Attorney, Legacy And More.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var childServices in Model.ChildServices)
+        {
+            <h2 class="service-title">@(Model.ParentServices.FirstOrDefault(x=>x.Id==childServices.Key).Title)</h2>
+            <div class="row">
+                @foreach (var service in childServices.Value)
+                {
+                    <div class="col-md-6 col-lg-4">
+                        <a href="/service/@service.UrlParam" class="w-100">
+                            <img src="@service.ImageUrl" class="img-fluid" alt="Alternate Text" />
+                        </a>
+                        <div class="practice-area-item">
+                            <em class="flaticon-act"></em><div class="content">
+                                <h4>@service.Title</h4>
+                                <p>@service.Summery</p>
+                                <a href="/service/@service.UrlParam">بیشتر بدانید</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        }
+
+    </div>
+</section>

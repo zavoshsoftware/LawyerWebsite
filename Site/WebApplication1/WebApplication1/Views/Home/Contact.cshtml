@@ -1,4 +1,4 @@
-﻿
+﻿@model ViewModels.ConsultantViewModel
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/FrontEnd/_FrontEndLayout.cshtml";
@@ -11,11 +11,11 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="banner">
-                    <h1>Contacts</h1>
+                    <h1>تماس با ما</h1>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">خانه</a></li>
                         <li><i class="fas fa-angle-right"></i></li>
-                        <li>Contacts</li>
+                        <li>تماس با ما</li>
                     </ul>
                 </div>
             </div>
@@ -25,67 +25,8 @@
 
 <!-- :: History -->
 <section class="history">
-    <div class="bg-section">
-        <div class="overlay"></div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div class="sec-title text-center">
-                    <h2>History</h2>
-                    <h3>Timeline Company</h3>
-                </div>
-            </div>
-        </div>
-        <div class="history-line owl-carousel owl-theme">
-            <div class="box-line">
-                <div class="head">
-                    <h4>Founding</h4>
-                </div>
-                <div class="down">
-                    <span>2016</span>
-                    <span>May, 5</span>
-                </div>
-            </div>
-            <div class="box-line">
-                <div class="head">
-                    <h4>Serious Clients</h4>
-                </div>
-                <div class="down">
-                    <span>2017</span>
-                    <span>mar, 8</span>
-                </div>
-            </div>
-            <div class="box-line">
-                <div class="head">
-                    <h4>human Rights</h4>
-                </div>
-                <div class="down">
-                    <span>2018</span>
-                    <span>April, 12</span>
-                </div>
-            </div>
-            <div class="box-line">
-                <div class="head">
-                    <h4>Nominee Of The Year</h4>
-                </div>
-                <div class="down">
-                    <span>2019</span>
-                    <span>June, 19</span>
-                </div>
-            </div>
-            <div class="box-line">
-                <div class="head">
-                    <h4>Best Firm Of the year</h4>
-                </div>
-                <div class="down">
-                    <span>2020</span>
-                    <span>may, 20</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @Html.Raw(Model.section1.Body)
+    @Html.Raw(Model.section2.Body)
     <!-- :: Quote -->
     <div class="quote">
         <div class="container">
@@ -105,49 +46,47 @@
                     <div class="col-lg-8">
                         <div class="quote-box">
                             <div class="sec-title">
-                                <h3>Get Every Updates</h3>
-                                <p>Decision Are A Professional Attorney &amp; Lawyers Services Provider Institutions. Suitable For Law Firm, Injury Law, Traffic Ticket Attorney, Legacy And More.</p>
+                                <h3>جدیدی ترین مقالات را مطالعه کنید</h3>
+                                <p>امور حقوقی خود را با خیالی آسوده به ما بسپارید<strong>تجربه بالا، دانش به روز، آموزش مداول و قدرت تصمیم گیری باعث شده است تا وکلای موسسه حقوقی کاخ عدالت بهترین عملکرد را در سال های اخیر داشته باشند</strong></p>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="quote-item">
-                                        <input type="text" name="name" placeholder="Name">
+                                        <input type="text" name="name" placeholder="نام و نام خانوادگی">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="quote-item">
-                                        <input type="email" name="email" placeholder="Email">
+                                        <input type="email" name="email" placeholder="تلفن تماس">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="quote-item">
-                                        <input type="text" name="subject" placeholder="Enter Your Subject">
+                                        <input type="text" name="subject" placeholder="عنوان">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="quote-item">
                                         <select>
-                                            <option value="0">Practice Area</option>
-                                            <option value="1">Business Law</option>
-                                            <option value="2">Family Law</option>
-                                            <option value="3">Real Estate Law</option>
-                                            <option value="4">Juricial Law</option>
-                                            <option value="5">Criminal Law</option>
-                                            <option value="6">Personal Injury</option>
+                                            <option value="0">دایره حقوقی</option>
+                                            <option value="1">قوانین مالی</option>
+                                            <option value="2">قوانین خانواده</option>
+                                            <option value="3">قوانین ملکی</option>
+                                            <option value="4">قوانین کیفری</option>                                            
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="quote-item">
                                         <div class="quote-item">
-                                            <textarea placeholder="Leave Your Message Here....."></textarea>
+                                            <textarea placeholder="متن پیام....."></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="quote-item">
 
-                                        <a class="btn-1" href="#">Send Message</a>
+                                        <a class="btn-1" href="#">ارسال پیام</a>
                                     </div>
                                 </div>
                             </div>

@@ -170,7 +170,32 @@ namespace WebApplication1.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        /**************************************************/
+        [Route("Services")]
+        public ActionResult Services()
+        {
+            ServicesViewModel model = new ServicesViewModel();
+            model.ParentServices = db.Services.Where(x => x.IsDeleted != true && x.ParentId == null).
+                ToList();
 
+            foreach (var parentServic in model.ParentServices)
+            {
+                model.ChildServices.Add(parentServic.Id, db.Services.Where(x => x.IsDeleted == false && x.ParentId == parentServic.Id).ToList());
+            }
+            return View(model);
+        }
+        [Route("ServicesByCategory/{urlParam}")]
+        public ActionResult ServicesByCategory(string urlParam)
+        {
+            ServicesByCategoryViewModel model = new ServicesByCategoryViewModel();
+            model.ParentService = new Service();
+            model.ParentService = db.Services.FirstOrDefault(x => x.IsDeleted == false && x.ParentId == null && x.UrlParam == urlParam);
+            var id = model.ParentService.Id;
+            model.ChildServices = db.Services.Include(p => p.Parent).Where(x => x.IsDeleted != true && x.ParentId == id).ToList();
+
+            return View(model);
+        }
+        /**********************************************************************/
         protected override void Dispose(bool disposing)
         {
             if (disposing)
